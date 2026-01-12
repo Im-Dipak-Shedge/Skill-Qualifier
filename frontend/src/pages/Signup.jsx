@@ -44,7 +44,7 @@ export default function AuthPage() {
         </p>
 
         {/* Google Sign In */}
-        <button className="mt-6 w-full flex items-center justify-center gap-2 border border-gray-700 rounded-lg py-2.5 text-sm font-medium text-gray-200 hover:bg-gray-800 transition">
+        <button className="mt-6 cursor-pointer w-full flex items-center justify-center gap-2 border border-gray-700 rounded-lg py-2.5 text-sm font-medium text-gray-200 hover:bg-gray-800 transition">
           <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             alt="Google"
@@ -127,7 +127,7 @@ export default function AuthPage() {
           <button
             type="submit"
             disabled={!isEmailValid || (isSignup && name.trim() === "")}
-            className={`w-full py-2.5 rounded-lg font-semibold transition ${
+            className={`w-full cursor-pointer py-2.5 rounded-lg font-semibold transition ${
               isEmailValid && (!isSignup || name.trim() !== "")
                 ? "bg-indigo-600 hover:bg-indigo-700 text-white"
                 : "bg-indigo-400/60 text-white cursor-not-allowed"
@@ -142,7 +142,7 @@ export default function AuthPage() {
           {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             onClick={toggleMode}
-            className="text-indigo-500 hover:underline"
+            className="text-indigo-500 cursor-pointer hover:underline"
           >
             {isSignup ? "Sign In" : "Sign Up"}
           </button>
