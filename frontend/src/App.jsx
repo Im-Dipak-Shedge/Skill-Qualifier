@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Signup from "../pages/Signup";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
