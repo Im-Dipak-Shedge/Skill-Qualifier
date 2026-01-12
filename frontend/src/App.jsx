@@ -1,18 +1,10 @@
 import { useState } from "react";
+import Signup from "../pages/Signup";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="card">
-        <button
-          className="bg-red-600  "
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </button>
-      </div>
+      <Signup />
     </>
   );
 }
