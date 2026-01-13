@@ -18,9 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // ---- ROUTE ----
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+
 
 // ---- SERVER ----
 app.listen(3000, () => {
