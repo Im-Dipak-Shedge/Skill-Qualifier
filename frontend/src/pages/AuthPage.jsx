@@ -40,7 +40,7 @@ export default function AuthPage() {
       const decoded = jwtDecode(authResult.credential);
       console.log(decoded);
     } catch (err) {
-      console.log("error while signin with goole:  :", err);
+      console.log("error while signin with goole  :", err);
     }
   };
 
