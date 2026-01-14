@@ -8,39 +8,39 @@ const api = axios.create({
 /*
   REQUEST INTERCEPTOR
   Runs BEFORE every request
-*/
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem("token");
+// */
+// api.interceptors.request.use(
+//     (config) => {
+//         const token = localStorage.getItem("token");
 
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
+//         if (token) {
+//             config.headers.Authorization = `Bearer ${token}`;
+//         }
 
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
-    }
-);
+//         return config;
+//     },
+//     (error) => {
+//         return Promise.reject(error);
+//     }
+// );
 
-/*
-  RESPONSE INTERCEPTOR
-  Runs AFTER every response
-*/
-api.interceptors.response.use(
-    (response) => response,
-    (error) => {
-        if (error.response && error.response.status === 401) {
-            // token invalid or expired
-            localStorage.removeItem("token");
+// /*
+//   RESPONSE INTERCEPTOR
+//   Runs AFTER every response
+// */
+// api.interceptors.response.use(
+//     (response) => response,
+//     (error) => {
+//         if (error.response && error.response.status === 401) {
+//             // token invalid or expired
+//             localStorage.removeItem("token");
 
-            // optional redirect
-            // window.location.href = "/auth";
-        }
+//             // optional redirect
+//             // window.location.href = "/auth";
+//         }
 
-        return Promise.reject(error);
-    }
-);
+//         return Promise.reject(error);
+//     }
+// );
 
 export default api;
