@@ -1,20 +1,19 @@
-mongoose.connect('mongodb://127.0.0.1:27017/SkillUser');
+import mongoose from "mongoose";
 
-let userSchema = mongoose.Schema({
-
-  name: String,
-  email: String,
-  password: String,
-  resume: {
-    originalName: String,
-    fileName: String,
-    filePath: String,
-    fileSize: Number,
-    mimeType: String
-  }
-},
+const userSchema = new mongoose.Schema(
+  {
+    fullname: String,
+    email: { type: String, required: true, unique: true },
+    password: { type: String, select: false },
+    googleId: { type: String, unique: true, sparse: true },
+    avatar: String,
+    loginType: {
+      type: String,
+      enum: ["local", "google"],
+      required: true
+    },
+  },
   { timestamps: true }
-
 );
 
-module.exports = mongoose.model('user', userSchema);
+export default mongoose.model("User", userSchema);

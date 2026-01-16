@@ -1,4 +1,7 @@
 
+import { OAuth2Client } from "google-auth-library";
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 export const googleLogin = async (req, res) => {
     try {
@@ -33,6 +36,11 @@ export const googleLogin = async (req, res) => {
         console.log("Verified Google user:", email);
 
         // later: find/create user + issue YOUR JWT
+
+
+
+
+
         res.status(200).json({
             message: "Google user verified",
             user: { googleId, email, name, picture },

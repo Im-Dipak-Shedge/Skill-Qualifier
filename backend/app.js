@@ -4,6 +4,7 @@ import cors from "cors";
 import { fileURLToPath } from "url";
 import authRouter from './routes/authRouter.js'
 import dotenv from "dotenv";
+import { connectDB } from './config/mongoose.js'
 dotenv.config();
 
 const app = express();
@@ -12,13 +13,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ---- MIDDLEWARES ----
-app.use(
-    cors({
-        origin: "http://localhost:5173", // frontend URL ONLY
-        credentials: true,
-    })
-);
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173", // frontend URL
+    credentials: true, // allow cookies
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -27,6 +25,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // ---- ROUTES ----
 app.use("/auth", authRouter);
+
+
+//route logging
+app.use((req, res, next) => {
+    console.log("➡️", req.method, req.url);
+    next();
+});
 
 
 // ---- signup ----

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
 import api from "./../apis/axios";
 
 export default function AuthPage() {
@@ -38,10 +37,8 @@ export default function AuthPage() {
 
   const googleResponse = async (authResult) => {
     try {
-      const decoded = jwtDecode(authResult.credential);
-      console.log(decoded);
       const res = await api.post("/auth/google", {
-        credential: decoded,
+        credential: authResult.credential,
       });
     } catch (err) {
       console.log("error while signin with goole  :", err);
