@@ -1,55 +1,9 @@
 import express from "express";
-
+import { googleLogin } from "../controllers/authController.js"
 const authRouter = express.Router();
 
-// test route
-authRouter.get("/", (req, res) => {
-    res.send("hey its auth router");
-});
-
-// GOOGLE LOGIN (must be POST, not GET)
-authRouter.post("/google", async (req, res) => {
-    try {
-        const { credential } = req.body;
-
-        if (!credential) {
-            return res.status(400).json({ message: "No credential provided" });
-        }
-
-        // 🔐 VERIFY WITH GOOGLE
-        const ticket = await client.verifyIdToken({
-            idToken: credential,
-            audience: process.env.GOOGLE_CLIENT_ID,
-        });
-
-        const payload = ticket.getPayload();
-
-        // extract only what you need
-        const {
-            sub: googleId,
-            email,
-            email_verified,
-            name,
-            picture,
-        } = payload;
-
-        if (!email_verified) {
-            return res.status(403).json({ message: "Email not verified" });
-        }
-
-        // 🔥 NOW this user is VERIFIED by Google
-        console.log("Verified Google user:", email);
-
-        // later: find/create user + issue YOUR JWT
-        res.status(200).json({
-            message: "Google user verified",
-            user: { googleId, email, name, picture },
-        });
-    } catch (err) {
-        console.error("Google verification failed:", err);
-        res.status(401).json({ message: "Invalid Google token" });
-    }
-});
+// sign in with google button
+authRouter.post("/", googleLogin);
 
 
 export default authRouter;
