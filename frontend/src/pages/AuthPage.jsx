@@ -40,8 +40,12 @@ export default function AuthPage() {
       const res = await api.post("/auth/google", {
         credential: authResult.credential,
       });
+
+      if (res.data.user) {
+        navigate("/home");
+      }
     } catch (err) {
-      console.log("error while signin with goole  :", err);
+      console.log("error while signin with google  :", err);
     }
   };
 
@@ -122,8 +126,8 @@ export default function AuthPage() {
                   email.length === 0
                     ? "border border-gray-300 focus:ring-indigo-500/60"
                     : isEmailValid
-                    ? "border border-green-500 focus:ring-green-500/60"
-                    : "border border-red-500 focus:ring-red-500/60"
+                      ? "border border-green-500 focus:ring-green-500/60"
+                      : "border border-red-500 focus:ring-red-500/60"
                 }`}
               required
             />

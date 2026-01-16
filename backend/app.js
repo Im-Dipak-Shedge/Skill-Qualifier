@@ -1,11 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 import authRouter from './routes/authRouter.js'
-import dotenv from "dotenv";
-import { connectDB } from './config/mongoose.js'
-dotenv.config();
+import { connectDB } from './config/mongoose.js';
+connectDB();
 
 const app = express();
 // ---- __dirname FIX ----
@@ -27,65 +28,58 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/auth", authRouter);
 
 
-//route logging
-app.use((req, res, next) => {
-    console.log("➡️", req.method, req.url);
-    next();
-});
+// // ---- signup ----
+// app.post('/', async (req, res) => {
+//     let { name, email, password } = req.body;
+//     let user = await userModel.findOne({ email });
+//     if (user) return res.status(300).send('User Already registered ');
+
+//     bcrypt.genSalt(10, (err, salt) => {
+//         bcrypt.hash(password, salt, async (err, hash) => {
+//             let user = await userModel.create({
+//                 username,
+//                 name,
+//                 age,
+//                 email,
+//                 password: hash
+//             });
+//             let token = jwt.sign({ email: email, userid: user._id }, 'topsecret');
+//             res.cookie('token', token);
+//             res.send('Register');
+//         });
+//     });
+
+// });
+
+// app.get('/login', (req, res) => {
+//     // console.log("working");
+//     res.render('login');
+// });
 
 
-// ---- signup ----
-app.post('/', async (req, res) => {
-    let { name, email, password } = req.body;
-    let user = await userModel.findOne({ email });
-    if (user) return res.status(300).send('User Already registered ');
+// app.post('/login', async (req, res) => {
+//     let { email, password } = req.body;
+//     let user = await userModel.findOne({ email });
+//     if (!user) return res.status(300).send('Something Went Wrong');
 
-    bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(password, salt, async (err, hash) => {
-            let user = await userModel.create({
-                username,
-                name,
-                age,
-                email,
-                password: hash
-            });
-            let token = jwt.sign({ email: email, userid: user._id }, 'topsecret');
-            res.cookie('token', token);
-            res.send('Register');
-        });
-    });
+//     bcrypt.compare(password, user.password, (err, result) => {
+//         if (result) {
+//             let token = jwt.sign({ email, userid: user._id }, 'topsecret');
+//             res.cookie('token', token);
+//             res.status(200).redirect('/profile');
+//         }
+//         else {
+//             res.redirect('/login');
+//         }
+//     });
 
-});
+// });
 
-app.get('/login', (req, res) => {
-    // console.log("working");
-    res.render('login');
-});
+// app.get('/logout', (req, res) => {
+//     res.cookie('token', '');
+//     res.redirect('login');
 
-
-app.post('/login', async (req, res) => {
-    let { email, password } = req.body;
-    let user = await userModel.findOne({ email });
-    if (!user) return res.status(300).send('Something Went Wrong');
-
-    bcrypt.compare(password, user.password, (err, result) => {
-        if (result) {
-            let token = jwt.sign({ email, userid: user._id }, 'topsecret');
-            res.cookie('token', token);
-            res.status(200).redirect('/profile');
-        }
-        else {
-            res.redirect('/login');
-        }
-    });
-
-});
-
-app.get('/logout', (req, res) => {
-    res.cookie('token', '');
-    res.redirect('login');
-
-});
+// });
 
 // ---- SERVER ----
 app.listen(3000, () => {

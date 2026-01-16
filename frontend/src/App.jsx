@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AuthPage from "./pages/AuthPage";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
