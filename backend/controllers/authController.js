@@ -4,14 +4,11 @@ import { generateToken } from "../utils/generateToken.js";
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 export const googleLogin = async (req, res) => {
-    const useNavigate = useNavigate();
     try {
         const { credential } = req.body;
-
         if (!credential) {
             return res.status(400).json({ message: "No credential provided" });
         }
-
         const ticket = await client.verifyIdToken({
             idToken: credential,
             audience: process.env.GOOGLE_CLIENT_ID,

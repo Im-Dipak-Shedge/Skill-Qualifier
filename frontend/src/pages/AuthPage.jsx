@@ -2,14 +2,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import api from "./../apis/axios";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function AuthPage() {
-  const navigate = useNavigate();
+  const { login } = useAuth();
   const [isSignup, setIsSignup] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
+  const navigate = useNavigate();
 
   const validateEmail = (value) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,9 +43,8 @@ export default function AuthPage() {
         credential: authResult.credential,
       });
 
-      if (res.data.user) {
-        navigate("/home");
-      }
+      login(res.data.user);
+      navigate("/home");
     } catch (err) {
       console.log("error while signin with google  :", err);
     }

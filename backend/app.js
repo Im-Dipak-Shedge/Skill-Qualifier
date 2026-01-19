@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import authRouter from './routes/authRouter.js'
 import { connectDB } from './config/mongoose.js';
 connectDB();
+import cookieParser from "cookie-parser";
 
 const app = express();
 // ---- __dirname FIX ----
@@ -18,6 +19,7 @@ app.use(cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173", // frontend URL
     credentials: true, // allow cookies
 }));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
