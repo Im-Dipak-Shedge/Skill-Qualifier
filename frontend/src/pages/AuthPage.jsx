@@ -7,34 +7,46 @@ import { useAuth } from "../contexts/AuthContext";
 export default function AuthPage() {
   const { login } = useAuth();
   const [isSignup, setIsSignup] = useState(true);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
   const navigate = useNavigate();
-
+  // State for form values
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    password: "",
+  });
   const validateEmail = (value) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsEmailValid(regex.test(value));
-    setEmail(value);
+    setFormData((prev) => ({ ...prev, email: value }));
   };
 
   const toggleMode = () => {
     setIsSignup(!isSignup);
-    setName("");
-    setEmail("");
-    setPassword("");
+    setFormData({ fullname: "", email: "", password: "" });
     setIsEmailValid(false);
   };
 
-  const handleSubmit = (e) => {
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log({
-      name,
-      email,
-      password,
+      formData,
       mode: isSignup ? "signup" : "signin",
     });
+    const endpoint = isSignup ? "/auth/signup" : "/auth/signin";
+    try {
+      const res = await api.post(endpoint, formData);
+      console.log(res);
+    } catch (err) {
+      console.log("error during auth :", err);
+      return;
+    }
   };
 
   const googleResponse = async (authResult) => {
@@ -97,8 +109,9 @@ export default function AuthPage() {
               </label>
               <input
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                name="fullname"
+                value={formData.fullname}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full px-4 py-2.5 rounded-xl
                   bg-white text-gray-900
@@ -117,14 +130,15 @@ export default function AuthPage() {
             </label>
             <input
               type="email"
-              value={email}
+              name="email"
+              value={formData.email}
               onChange={(e) => validateEmail(e.target.value)}
               placeholder="you@example.com"
               className={`w-full px-4 py-2.5 rounded-xl
                 bg-white text-gray-900 shadow-sm
                 focus:outline-none focus:ring-2 transition
                 ${
-                  email.length === 0
+                  formData.email.length === 0
                     ? "border border-gray-300 focus:ring-indigo-500/60"
                     : isEmailValid
                       ? "border border-green-500 focus:ring-green-500/60"
@@ -132,7 +146,7 @@ export default function AuthPage() {
                 }`}
               required
             />
-            {!isEmailValid && email.length > 0 && (
+            {!isEmailValid && formData.email.length > 0 && (
               <p className="text-xs text-red-600 mt-1">Enter a valid email</p>
             )}
           </div>
@@ -144,8 +158,9 @@ export default function AuthPage() {
             </label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               placeholder="Enter your password"
               disabled={!isEmailValid}
               className={`w-full px-4 py-2.5 rounded-xl
@@ -163,12 +178,14 @@ export default function AuthPage() {
           {/* Submit */}
           <button
             type="submit"
-            disabled={!isEmailValid || (isSignup && name.trim() === "")}
+            disabled={
+              !isEmailValid || (isSignup && formData.fullname.trim() === "")
+            }
             className={`w-full py-3 rounded-xl font-semibold text-white
               transition-all duration-300
               ${
-                isEmailValid && (!isSignup || name.trim() !== "")
-                  ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg hover:-translate-y-[1px]"
+                isEmailValid && (!isSignup || formData.fullname.trim() !== "")
+                  ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg hover:-translate-y-[1px] cursor-pointer"
                   : "bg-gradient-to-r from-indigo-300 to-purple-300 cursor-not-allowed"
               }`}
           >
@@ -181,7 +198,7 @@ export default function AuthPage() {
           {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             onClick={toggleMode}
-            className="text-indigo-600 hover:underline font-medium"
+            className="text-indigo-600 cursor-pointer hover:underline font-medium"
           >
             {isSignup ? "Sign In" : "Sign Up"}
           </button>

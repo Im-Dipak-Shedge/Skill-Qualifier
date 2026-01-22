@@ -12,6 +12,12 @@ const userSchema = new mongoose.Schema(
       enum: ["local", "google"],
       required: true
     },
+    isVerified: {
+      type: Boolean,
+      default: false
+    }
+
+
   },
   { timestamps: true }
 );

@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
   );
 }
 
-// ✅ Safe hook
+// custom hook
 export function useAuth() {
   const ctx = useContext(AuthContext);
   if (!ctx) {
