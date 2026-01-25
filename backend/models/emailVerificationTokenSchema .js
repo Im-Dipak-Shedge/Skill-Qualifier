@@ -14,7 +14,11 @@ const emailVerificationTokenSchema = new mongoose.Schema({
         type: Date,
         required: true
     }
-});
+
+},);
+
+//auto-delete expired tokens
+emailVerificationTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
 export default mongoose.model(
     "EmailVerificationToken",

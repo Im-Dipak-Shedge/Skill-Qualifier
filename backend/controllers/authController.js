@@ -4,9 +4,8 @@ import { generateToken } from "../utils/generateToken.js";
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 import bcrypt from "bcrypt";
 import { sendVerificationEmail } from "../utils/sendEmail.js";
-import emailVerificationTokenSchema from "../models/emailVerificationTokenSchema.js";
 import crypto from "crypto";
-
+import emailVerificationTokenSchema from "../models/emailVerificationTokenSchema .js";
 
 
 export const googleLogin = async (req, res) => {
@@ -109,13 +108,18 @@ export const emailSignup = async (req, res) => {
             loginType: "local",
             isVerified: false,
         });
+        console.log("the user is saved");
 
         // Generate email verification token
         const emailVerificationToken = crypto.randomBytes(32).toString("hex");
-        await EmailVerificationToken.create({
+        const hashedToken = crypto
+            .createHash("sha256")
+            .update(emailVerificationToken)
+            .digest("hex");
+        await emailVerificationTokenSchema.create({
             userId: newUser._id,
-            token: emailVerificationToken,
-            expiresAt: Date.now() + 2 * 60 * 60 * 1000, // 2 hours
+            token: hashedToken,
+            expiresAt: new Date(Date.now() + 2 * 60 * 60 * 1000),
         });
 
         const link = `http://localhost:5173/verify-email?token=${emailVerificationToken}`;
@@ -127,7 +131,33 @@ export const emailSignup = async (req, res) => {
     }
 };
 
+export const emailVerification = async (req, res) => {
+    try {
+        const { token } = req.body;
+        const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
 
+        const record = await emailVerificationTokenSchema.findOne({ token: hashedToken, expiresAt: { $gt: Date.now() } });
+        if (!record) {
+            return res.status(400).json({ message: "Invalid or expired token" });
+        }
+        const user = await userModel.findById(record.userId);
+        if (!user) {
+            return res.status(400).json({ message: "User not found" });
+        }
+        if (user.isVerified) {
+            return res.status(400).json({ message: "User already verified" });
+        }
+        user.isVerified = true;
+        await user.save();
+        await record.deleteOne();
+        return res.status(200).json({
+            message: "Email verified successfully",
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "something went wrong while verifying email", err });
+    }
+}
 
 
 export const emailSignin = async (req, res) => {

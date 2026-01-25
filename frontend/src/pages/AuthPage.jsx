@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import api from "./../apis/axios";
 import { useAuth } from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 export default function AuthPage() {
   const { login } = useAuth();
@@ -35,10 +36,7 @@ export default function AuthPage() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      formData,
-      mode: isSignup ? "signup" : "signin",
-    });
+    toast.success("Form submitted successfully!");
     const endpoint = isSignup ? "/auth/signup" : "/auth/signin";
     try {
       const res = await api.post(endpoint, formData);
