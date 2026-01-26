@@ -83,6 +83,8 @@ export const sendUserData = (req, res) => {
         user: {
             id: req.user.id,
             email: req.user.email,
+            name: req.user.name,
+            avatar: req.user.avatar,
         },
     });
 }

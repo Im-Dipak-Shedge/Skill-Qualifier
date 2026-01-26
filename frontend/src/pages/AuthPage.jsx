@@ -16,6 +16,7 @@ export default function AuthPage() {
     email: "",
     password: "",
   });
+
   const validateEmail = (value) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsEmailValid(regex.test(value));
@@ -34,7 +35,7 @@ export default function AuthPage() {
   };
 
   // Handle signup
-  const handleSignup = async (e) => {
+  const handleSignup = async () => {
     try {
       const res = await api.post("/auth/signup", formData);
       toast.success(res.data.message);
