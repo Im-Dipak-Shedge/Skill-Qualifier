@@ -4,10 +4,10 @@ import { GoogleLogin } from "@react-oauth/google";
 import api from "./../apis/axios";
 import { useAuth } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
-
+import Swal from "sweetalert2";
 export default function AuthPage() {
   const { login } = useAuth();
-  const [isSignup, setIsSignup] = useState(true);
+  const [isSignup, setIsSignup] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const navigate = useNavigate();
   // State for form values
@@ -36,13 +36,15 @@ export default function AuthPage() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success("Form submitted successfully!");
+
     const endpoint = isSignup ? "/auth/signup" : "/auth/signin";
     try {
       const res = await api.post(endpoint, formData);
       console.log(res);
     } catch (err) {
-      console.log("error during auth :", err);
+      const message =
+        err.response?.data?.message || "Signup failed. Please try again.";
+      toast.info(message);
       return;
     }
   };
@@ -52,7 +54,6 @@ export default function AuthPage() {
       const res = await api.post("/auth/google", {
         credential: authResult.credential,
       });
-
       login(res.data.user);
       navigate("/home");
     } catch (err) {

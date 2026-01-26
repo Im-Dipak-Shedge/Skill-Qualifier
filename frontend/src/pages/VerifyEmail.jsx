@@ -7,6 +7,7 @@ export default function VerifyEmail() {
   const navigate = useNavigate();
   const token = searchParams.get("token");
   const [status, setStatus] = useState("loading");
+  const [countdown, setCountdown] = useState(5);
 
   useEffect(() => {
     if (!token) {
@@ -25,6 +26,23 @@ export default function VerifyEmail() {
 
     verifyEmailFun();
   }, [token]);
+
+  useEffect(() => {
+    if (status !== "success") return;
+
+    const interval = setInterval(() => {
+      setCountdown((c) => c - 1);
+    }, 1000);
+
+    const timer = setTimeout(() => {
+      navigate("/login");
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
+  }, [status, navigate]);
 
   return (
     <div
@@ -72,6 +90,9 @@ export default function VerifyEmail() {
             >
               Go to Sign In
             </button>
+            <p className="text-gray-500 mt-2 text-sm">
+              Redirecting to sign in in {countdown} seconds…
+            </p>
           </>
         )}
 
@@ -96,6 +117,9 @@ export default function VerifyEmail() {
             >
               Back to Sign Up
             </button>
+            <p className="text-gray-500 mt-2 text-md">
+              Redirecting to sign in in {countdown} seconds…
+            </p>
           </>
         )}
       </div>

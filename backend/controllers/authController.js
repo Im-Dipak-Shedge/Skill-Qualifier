@@ -94,8 +94,9 @@ export const emailSignup = async (req, res) => {
         const { fullname, email, password } = req.body;
         // Check if user already exists
         const existingUser = await userModel.findOne({ email });
+
         if (existingUser) {
-            return res.status(400).json({ message: "User already exists" });
+            return res.status(400).json({ message: "Email already registered. Please sign in." });
         }
 
         // Hash the password
@@ -108,7 +109,6 @@ export const emailSignup = async (req, res) => {
             loginType: "local",
             isVerified: false,
         });
-        console.log("the user is saved");
 
         // Generate email verification token
         const emailVerificationToken = crypto.randomBytes(32).toString("hex");
