@@ -124,7 +124,7 @@ export const emailSignup = async (req, res) => {
 
         const link = `http://localhost:5173/verify-email?token=${emailVerificationToken}`;
         sendVerificationEmail(email, link);
-        res.status(201).json({ message: "User registered successfully" });
+        res.status(201).json({ message: "Verification email sent. Check your inbox." });
 
     } catch (err) {
         res.status(500).json({ message: "something went wrong while signing up", err });
@@ -162,4 +162,42 @@ export const emailVerification = async (req, res) => {
 
 export const emailSignin = async (req, res) => {
     // Implementation for email signin
+    try {
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email }).select("+password");
+        if (!user) {
+            return res.status(400).json({ message: "User not found. Please sign up." });
+        }
+        if (user.loginType !== "local") {
+            return res.status(400).json({ message: `Please sign in using ${user.loginType}` });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(400).json({ message: "Invalid credentials" });
+
+        }
+        if (!user.isVerified) {
+            return res.status(400).json({ message: "Email not verified. Please verify your email." });
+        }
+        const token = generateToken(user);
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "lax",
+            maxAge: 5 * 24 * 60 * 60 * 1000,
+        });
+
+        res.status(200).json({
+            message: "Signin successful",
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+
+            },
+        });
+    } catch (err) {
+        res.status(500).json({ message: "something went wrong while signing in", err });
+    }
 };

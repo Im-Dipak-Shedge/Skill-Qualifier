@@ -33,20 +33,40 @@ export default function AuthPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const endpoint = isSignup ? "/auth/signup" : "/auth/signin";
+  // Handle signup
+  const handleSignup = async (e) => {
     try {
-      const res = await api.post(endpoint, formData);
-      console.log(res);
+      const res = await api.post("/auth/signup", formData);
+      toast.success(res.data.message);
+      setFormData({ fullname: "", email: "", password: "" });
     } catch (err) {
       const message =
         err.response?.data?.message || "Signup failed. Please try again.";
       toast.info(message);
       return;
     }
+  };
+
+  // Handle signin
+  const handleSignin = async () => {
+    try {
+      const res = await api.post("/auth/signin", formData);
+      login(res.data.user);
+      navigate("/home");
+    } catch (err) {
+      const message =
+        err.response?.data?.message || "Signin failed. Please try again.";
+      Swal.fire({
+        icon: "error",
+        title: "Signin Failed",
+        text: message,
+      });
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    isSignup ? handleSignup() : handleSignin();
   };
 
   const googleResponse = async (authResult) => {

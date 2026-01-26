@@ -62,7 +62,7 @@ export default function VerifyEmail() {
             <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
               Verifying your email
             </h1>
-            <p className="text-gray-500 mt-2 text-sm">
+            <p className="text-gray-500 mt-2 text-md">
               Please wait while we activate your account
             </p>
           </>
@@ -77,7 +77,7 @@ export default function VerifyEmail() {
             <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
               Email Verified
             </h1>
-            <p className="text-gray-500 mt-2 text-sm">
+            <p className="text-gray-500 mt-2 text-md">
               Your account is ready. You can sign in now.
             </p>
 
