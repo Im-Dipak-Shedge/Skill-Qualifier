@@ -7,6 +7,7 @@ import { useAuth } from "./contexts/AuthContext";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   const { user, loading } = useAuth();
@@ -25,7 +26,7 @@ function App() {
         draggable
         theme="light"
       />
-
+      <Navbar />
       <Routes>
         <Route
           path="/login"

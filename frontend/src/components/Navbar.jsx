@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <h1
           onClick={() => navigate("/")}
-          className="text-xl font-extrabold text-indigo-600 cursor-pointer"
+          className="text-3xl font-extrabold text-[#3F7D20] cursor-pointer"
         >
           Skill Qualifier
         </h1>
@@ -41,12 +41,12 @@ export default function Navbar() {
           <img
             src={avatarUrl}
             alt="avatar"
-            className="h-10 w-10 rounded-full object-cover border"
+            className="h-8 w-8 rounded-full object-cover border"
           />
 
           <button
             onClick={handleLogout}
-            className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold
+            className="ml-2 px-4 py-2 rounded-lg text-sm cursor-pointer font-semibold
               bg-red-50 text-red-600 hover:bg-red-100 transition"
           >
             Logout

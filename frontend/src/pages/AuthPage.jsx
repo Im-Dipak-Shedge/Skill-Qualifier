@@ -10,6 +10,7 @@ export default function AuthPage() {
   const [isSignup, setIsSignup] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const navigate = useNavigate();
+
   // State for form values
   const [formData, setFormData] = useState({
     fullname: "",
@@ -205,7 +206,7 @@ export default function AuthPage() {
               transition-all duration-300
               ${
                 isEmailValid && (!isSignup || formData.fullname.trim() !== "")
-                  ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg hover:-translate-y-[1px] cursor-pointer"
+                  ? "bg-gradient-to-r  from-[#3F7D20] to-green-700 hover:shadow-lg hover:-translate-y-[1px] cursor-pointer"
                   : "bg-gradient-to-r from-indigo-300 to-purple-300 cursor-not-allowed"
               }`}
           >
@@ -218,7 +219,7 @@ export default function AuthPage() {
           {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             onClick={toggleMode}
-            className="text-indigo-600 cursor-pointer hover:underline font-medium"
+            className="text-[#91C499] cursor-pointer hover:underline font-medium"
           >
             {isSignup ? "Sign In" : "Sign Up"}
           </button>
