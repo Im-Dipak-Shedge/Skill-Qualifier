@@ -1,36 +1,31 @@
-const multer = require("multer");
-const path = require("path");
+import multer from "multer";
+import path from "path";
 
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
- 
-  filename: function (req, file, cb) {
-    crypto.randomBytes(12, function(err, bytes)
-    {
-        const fn =  bytes.toString("hex")+ path.extname(file.originalname);
-        cb(null, fn);
-    })
-  }
-});
-
+const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "application/pdf") {
+  const allowedExt = [".pdf", ".doc", ".docx"];
+  const ext = path.extname(file.originalname).toLowerCase();
+
+  const allowedMime = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ];
+
+  if (allowedExt.includes(ext) && allowedMime.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error("Only PDF files are allowed"), false);
+    cb(new Error("Only PDF, DOC, and DOCX files are allowed"));
   }
 };
 
 const upload = multer({
   storage,
-  fileFilter,
   limits: {
-    fileSize: 5 * 1024 * 1024 
-  }
+    fileSize: 5 * 1024 * 1024, // 5MB
+  },
+  fileFilter,
 });
 
-module.exports = upload;
+export default upload;

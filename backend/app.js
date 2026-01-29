@@ -5,6 +5,7 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 import authRouter from './routes/authRouter.js'
+import resumeRouter from "./routes/resumeRouter.js";
 import { connectDB } from './config/mongoose.js';
 connectDB();
 import cookieParser from "cookie-parser";
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // ---- ROUTES ----
 app.use("/auth", authRouter);
+app.use("/upload", resumeRouter);
 
 
 // // ---- signup ----

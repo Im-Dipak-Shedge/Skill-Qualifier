@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import api from "../apis/axios";
 
 export default function Home() {
   const fileRef = useRef(null);
@@ -8,10 +9,19 @@ export default function Home() {
     setFile(e.target.files[0]);
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!file) return;
-    console.log("Uploading:", file);
-    // upload API here
+
+    const formData = new FormData();
+    formData.append("resume", file); // must match multer field name
+
+    try {
+      const res = await api.post("/upload", formData);
+
+      console.log("Upload success:", res.data);
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+    }
   };
 
   return (
