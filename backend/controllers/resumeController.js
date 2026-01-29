@@ -4,7 +4,7 @@ import path from "path";
 
 export const uploadResume = async (req, res) => {
     try {
-        // 1️⃣ Multer sanity check
+        // Multer sanity check
         if (!req.file) {
             return res.status(400).json({
                 success: false,
@@ -17,13 +17,14 @@ export const uploadResume = async (req, res) => {
 
         let extractedText = "";
 
-        // 2️⃣ Extract text based on file type
+        // Extract text based on file type
         if (mimetype === "application/pdf") {
-            const data = await pdf(buffer); 
-            extractedText = data.text; 
+            const data = await pdf(buffer);
+            extractedText = data.text;
         }
         else if (
-            mimetype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            ext === ".docx" || mimetype ===
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         ) {
             const result = await mammoth.extractRawText({ buffer });
             extractedText = result.value;
@@ -35,27 +36,22 @@ export const uploadResume = async (req, res) => {
             });
         }
 
-        // 3️⃣ Normalize text
+        // Normalize text
         const cleanedText = extractedText
             .replace(/\s+/g, " ")
             .replace(/\n+/g, "\n")
             .trim();
 
-        // 4️⃣ Basic quality check
+        //  Basic quality check
         if (cleanedText.length < 300) {
             return res.status(422).json({
                 success: false,
                 message: "Resume text could not be extracted properly",
             });
         }
-
-
         console.log(cleanedText);
 
-        // 5️⃣ (Later) Save resume + text to DB here
-        // const resume = await Resume.create({ ... })
 
-        // 6️⃣ Response (minimal, frontend-friendly)
         return res.status(201).json({
             success: true,
             message: "Resume uploaded and text extracted successfully",
@@ -63,7 +59,7 @@ export const uploadResume = async (req, res) => {
                 fileName: originalname,
                 fileSize: size,
                 charCount: cleanedText.length,
-                // resumeId: resume._id (later)
+                extractedText: cleanedText,
             },
         });
 
