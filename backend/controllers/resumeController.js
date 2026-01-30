@@ -11,7 +11,6 @@ export const uploadResume = async (req, res) => {
                 message: "Resume file is required",
             });
         }
-
         const { originalname, mimetype, buffer, size } = req.file;
         const ext = path.extname(originalname).toLowerCase();
 
@@ -50,7 +49,6 @@ export const uploadResume = async (req, res) => {
             });
         }
         console.log(cleanedText);
-
 
         return res.status(201).json({
             success: true,
