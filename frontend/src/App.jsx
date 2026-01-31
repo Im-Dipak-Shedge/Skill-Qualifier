@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import VerifyEmail from "./pages/VerifyEmail";
 import { useAuth } from "./contexts/AuthContext";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
+import UploadResume from "./pages/UploadResume";
+import ManualEntry from "./pages/ManualEntry";
 
 function App() {
   const { user, loading } = useAuth();
@@ -36,6 +37,8 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
         {/* email verification route */}
         <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/upload-resume" element={<UploadResume />} />
+        <Route path="/manual-entry" element={<ManualEntry />} />
       </Routes>
     </BrowserRouter>
   );

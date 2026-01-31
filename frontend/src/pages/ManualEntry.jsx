@@ -1,6 +1,5 @@
 import { useState } from "react";
-import axios from "../api/axios";
-
+import api from "../apis/axios.js";
 export default function ManualEntry() {
   const [skills, setSkills] = useState("");
   const [experience, setExperience] = useState("");
@@ -19,7 +18,7 @@ export default function ManualEntry() {
       setLoading(true);
       setError("");
 
-      await axios.post("/manual-entry", {
+      await api.post("/manual-entry", {
         skills,
         experienceYears: Number(experience),
         role,
