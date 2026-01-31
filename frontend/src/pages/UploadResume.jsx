@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import api from "../apis/axios";
+import Swal from "sweetalert2";
 
 export default function UploadResume() {
   const fileRef = useRef(null);
@@ -14,13 +15,17 @@ export default function UploadResume() {
 
     const formData = new FormData();
     formData.append("resume", file); // must match multer field name
-
     try {
       const res = await api.post("/upload", formData);
-
       console.log("Upload success:", res.data);
     } catch (err) {
-      console.error(err.response?.data || err.message);
+      Swal.fire({
+        icon: "error",
+        title: "Upload Failed",
+        text:
+          err.response?.data?.message ||
+          "Failed to upload resume. Please try again.",
+      });
     }
   };
 
@@ -131,10 +136,7 @@ export default function UploadResume() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl p-6
-          border border-[#91C499]/40
-          hover:border-[#3F7D20]/50
-          transition"
+                className="bg-white rounded-xl p-6 border border-[#91C499]/40 hover:border-[#3F7D20]/50transition"
               >
                 <h3 className="text-lg font-semibold text-[#3F7D20]">
                   {item.title}

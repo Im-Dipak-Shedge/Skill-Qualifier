@@ -207,7 +207,7 @@ export default function AuthPage() {
               ${
                 isEmailValid && (!isSignup || formData.fullname.trim() !== "")
                   ? "bg-gradient-to-r  from-[#3F7D20] to-green-700 hover:shadow-lg hover:-translate-y-[1px] cursor-pointer"
-                  : "bg-gradient-to-r from-indigo-300 to-purple-300 cursor-not-allowed"
+                  : "bg-gradient-to-r  from-[#3F7D20] to-green-700 opacity-50 cursor-not-allowed"
               }`}
           >
             {isSignup ? "Sign Up" : "Sign In"}
@@ -224,6 +224,7 @@ export default function AuthPage() {
             {isSignup ? "Sign In" : "Sign Up"}
           </button>
         </p>
+        
       </div>
     </div>
   );

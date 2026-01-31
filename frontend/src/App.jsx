@@ -13,7 +13,28 @@ import ManualEntry from "./pages/ManualEntry";
 function App() {
   const { user, loading } = useAuth();
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-white flex-shrink-0">
+        <div className="relative flex items-center justify-center animate-spin">
+          <div className="absolute flex flex-col justify-between h-16 rotate-0">
+            <div className="h-5 w-[6px] rounded-full bg-green-600 "></div>
+            <div className="h-5 w-[6px] rounded-full bg-green-500 "></div>
+          </div>
+          <div className="absolute flex flex-col justify-between h-16 rotate-45">
+            <div className="h-5 w-[6px] rounded-full bg-green-600 "></div>
+            <div className="h-5 w-[6px] rounded-full bg-green-500 "></div>
+          </div>
+          <div className="absolute flex flex-col justify-between h-16 rotate-90">
+            <div className="h-5 w-[6px] rounded-full bg-green-600 "></div>
+            <div className="h-5 w-[6px] rounded-full bg-green-500 "></div>
+          </div>
+          <div className="absolute flex flex-col justify-between h-16 -rotate-45">
+            <div className="h-5 w-[6px] rounded-full bg-green-600 "></div>
+            <div className="h-5 w-[6px] rounded-full bg-green-500 "></div>
+          </div>
+        </div>
+      </div>
+    );
   }
   return (
     <BrowserRouter>
