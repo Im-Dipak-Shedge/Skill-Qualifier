@@ -20,8 +20,6 @@ function evaluateExtractionQuality(text) {
 }
 
 
-
-
 export const uploadResume = async (req, res) => {
     try {
         if (!req.file) {
