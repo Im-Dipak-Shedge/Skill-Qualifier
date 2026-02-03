@@ -75,8 +75,8 @@ rounded-2xl px-6 py-4 flex gap-4 items-start"
 
         {/* Manual Entry (Recommended) */}
         <div
-          className="bg-white rounded-3xl p-10 border-2 border-[#3F7D20]
-          shadow-xl cursor-pointer relative"
+          className="bg-white rounded-3xl p-10 border border-[#91C499]
+          hover:border-[#3F7D20] hover:shadow-xl transition relative cursor-pointer"
           onClick={() => navigate("/manual-entry")}
         >
           <span

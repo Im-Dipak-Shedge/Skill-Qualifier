@@ -2,7 +2,7 @@ import pdf from "@cyber2024/pdf-parse-fixed";
 import mammoth from "mammoth";
 import path from "path";
 
-function evaluateExtractionQuality(text) {
+const evaluateExtractionQuality = (text) => {
     let score = 0;
     const charCount = text.length;
     const lines = text.split("\n");
@@ -20,6 +20,60 @@ function evaluateExtractionQuality(text) {
 }
 
 
+// Function to extract sections from resume text
+const extractSections = (text) => {
+    const SECTION_ALIASES = {
+        skills: ["skills", "technical skills", "key skills"],
+        experience: ["experience", "work experience", "professional experience"],
+        projects: ["projects", "personal projects", "academic projects"],
+    };
+
+    const lines = text.split("\n");
+    const sections = {};
+    let currentSection = null;
+
+    for (let line of lines) {
+        const cleanLine = line.trim();
+        if (!cleanLine) continue;
+
+        const normalized = cleanLine
+            .toLowerCase()
+            .replace(/[:\-]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+
+        let matched = null;
+        for (const section in SECTION_ALIASES) {
+            if (SECTION_ALIASES[section].includes(normalized)) {
+                matched = section;
+                break;
+            }
+        }
+
+        if (matched) {
+            currentSection = matched;
+            if (!sections[currentSection]) {
+                sections[currentSection] = [];
+            }
+            continue;
+        }
+
+        if (currentSection) {
+            sections[currentSection].push(cleanLine);
+        }
+    }
+
+    for (const key in sections) {
+        sections[key] = sections[key].join("\n");
+    }
+
+    return sections;
+};
+
+
+
+
+
 export const uploadResume = async (req, res) => {
     try {
         if (!req.file) {
@@ -34,6 +88,7 @@ export const uploadResume = async (req, res) => {
 
         let extractedText = "";
 
+        // Extract text based on file type
         if (mimetype === "application/pdf") {
             const data = await pdf(buffer);
             extractedText = data.text;
@@ -55,6 +110,7 @@ export const uploadResume = async (req, res) => {
             .replace(/\r/g, "")
             .replace(/[ \t]+/g, " ")
             .replace(/\n{2,}/g, "\n")
+            .replace(/^[\s•◦▪▫§|#–—·*\-]+/gm, "")
             .trim();
 
         const quality = evaluateExtractionQuality(cleanedText);
@@ -65,6 +121,10 @@ export const uploadResume = async (req, res) => {
                 message: "This resume appears to be designed using Canva or heavy graphics. Please upload a text-based PDF or DOCX for best results.",
             });
         }
+        const sections = extractSections(cleanedText);
+        console.log(sections);
+
+
 
         return res.status(201).json({
             success: true,

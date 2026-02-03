@@ -18,6 +18,7 @@ export default function UploadResume() {
     try {
       const res = await api.post("/upload", formData);
       console.log("Upload success:", res.data);
+      
     } catch (err) {
       Swal.fire({
         icon: "error",
