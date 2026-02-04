@@ -21,57 +21,195 @@ const evaluateExtractionQuality = (text) => {
 
 
 // Function to extract sections from resume text
-const extractSections = (text) => {
+
+
+// function extractSections(text) {
+//     const SECTION_ALIASES = {
+//         skills: [
+//             "skills", "technical skills", "key skills", "core skills",
+//             "technologies", "tools & technologies", "competencies"
+//         ],
+//         experience: [
+//             "experience", "work experience", "professional experience",
+//             "employment history", "work history"
+//         ],
+//         projects: [
+//             "projects", "personal projects", "academic projects",
+//             "key projects", "major projects"
+//         ],
+//         education: [
+//             "education", "academics", "qualifications"
+//         ],
+//         summary: [
+//             "summary", "profile", "about", "about me"
+//         ],
+//         activities: [
+//             "extra activities", "extracurricular", "activities", "volunteering"
+//         ],
+//         links: [
+//             "links", "profiles","Profile Links", "portfolio", "github", "linkedin"
+//         ]
+//     };
+
+//     const normalize = (s) =>
+//         s.toLowerCase().replace(/[:\-]/g, "").replace(/\s+/g, " ").trim();
+
+//     const lines = text.split("\n");
+//     const result = {};
+//     let currentSection = null;
+
+//     for (const line of lines) {
+//         const cleanLine = line.trim();
+//         if (!cleanLine) continue;
+
+//         const normalized = normalize(cleanLine);
+
+//         let matchedSection = null;
+//         for (const section in SECTION_ALIASES) {
+//             if (SECTION_ALIASES[section].includes(normalized)) {
+//                 matchedSection = section;
+//                 break;
+//             }
+//         }
+
+//         // Heading found
+//         if (matchedSection) {
+//             // Start capturing only for target sections
+//             if (["skills", "experience", "projects"].includes(matchedSection)) {
+//                 currentSection = matchedSection;
+//                 result[currentSection] = [];
+//             } else {
+//                 // Stop capturing on any other section
+//                 currentSection = null;
+//             }
+//             continue;
+//         }
+
+//         // Collect content
+//         if (currentSection) {
+//             result[currentSection].push(cleanLine);
+//         }
+//     }
+
+//     // Convert arrays to text
+//     for (const key in result) {
+//         result[key] = result[key].join("\n");
+//     }
+
+//     return result;
+// }
+
+
+function extractSections(text) {
+    const TARGET_SECTIONS = ["skills", "experience", "projects"];
     const SECTION_ALIASES = {
-        skills: ["skills", "technical skills", "key skills"],
-        experience: ["experience", "work experience", "professional experience"],
-        projects: ["projects", "personal projects", "academic projects"],
+        skills: [
+            "skills",
+            "technical skills",
+            "key skills",
+            "core skills",
+            "technologies",
+            "tools and technologies",
+            "competencies"
+        ],
+        experience: [
+            "experience",
+            "work experience",
+            "professional experience",
+            "employment history",
+            "work history"
+        ],
+        projects: [
+            "projects",
+            "personal projects",
+            "academic projects",
+            "key projects",
+            "major projects"
+        ],
+        education: [
+            "education",
+            "academics",
+            "qualifications"
+        ],
+        activities: [
+            "extra curricular",
+            "extra curriculars",
+            "extra-aurriculars & achievements",
+            "extra curricular activities",
+            "achievements",
+            "activities",
+            "volunteering"
+        ],
+        links: [
+            "profile links",
+            "links",
+            "portfolio",
+            "github",
+            "linkedin"
+        ],
+        summary: [
+            "summary",
+            "profile",
+            "about",
+            "about me"
+        ]
+    };
+
+    const normalize = (s) =>
+        s.toLowerCase().replace(/[^a-z\s]/g, "").replace(/\s+/g, " ").trim();
+
+    const looksLikeHeading = (line) => {
+        if (line.length > 40) return false;
+        if (/\d/.test(line)) return false;
+        if (line.split(" ").length > 6) return false;
+        return true;
     };
 
     const lines = text.split("\n");
-    const sections = {};
+    const result = {};
     let currentSection = null;
 
-    for (let line of lines) {
-        const cleanLine = line.trim();
-        if (!cleanLine) continue;
+    for (const line of lines) {
+        const clean = line.trim();
+        if (!clean) continue;
 
-        const normalized = cleanLine
-            .toLowerCase()
-            .replace(/[:\-]/g, "")
-            .replace(/\s+/g, " ")
-            .trim();
+        const normalized = normalize(clean);
 
-        let matched = null;
-        for (const section in SECTION_ALIASES) {
-            if (SECTION_ALIASES[section].includes(normalized)) {
-                matched = section;
-                break;
+        // detect alias heading ONLY if line looks like a heading
+        let detectedSection = null;
+        if (looksLikeHeading(clean)) {
+            for (const section in SECTION_ALIASES) {
+                for (const alias of SECTION_ALIASES[section]) {
+                    if (normalized === alias || normalized.startsWith(alias)) {
+                        detectedSection = section;
+                        break;
+                    }
+                }
+                if (detectedSection) break;
             }
         }
 
-        if (matched) {
-            currentSection = matched;
-            if (!sections[currentSection]) {
-                sections[currentSection] = [];
+        if (detectedSection) {
+            if (TARGET_SECTIONS.includes(detectedSection)) {
+                currentSection = detectedSection;
+                if (!result[currentSection]) result[currentSection] = [];
+            } else {
+                currentSection = null;
             }
             continue;
         }
 
         if (currentSection) {
-            sections[currentSection].push(cleanLine);
+            result[currentSection].push(clean);
         }
     }
 
-    for (const key in sections) {
-        sections[key] = sections[key].join("\n");
+    for (const k in result) {
+        result[k] = result[k].join("\n");
     }
 
-    return sections;
-};
-
-
-
+    return result;
+}
 
 
 export const uploadResume = async (req, res) => {
@@ -123,8 +261,6 @@ export const uploadResume = async (req, res) => {
         }
         const sections = extractSections(cleanedText);
         console.log(sections);
-
-
 
         return res.status(201).json({
             success: true,
