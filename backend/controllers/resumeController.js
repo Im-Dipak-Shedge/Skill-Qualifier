@@ -1,7 +1,7 @@
 import pdf from "@cyber2024/pdf-parse-fixed";
 import mammoth from "mammoth";
 import path from "path";
-
+import { extractSkills } from "../services/openRouterService.js";
 const evaluateExtractionQuality = (text) => {
     let score = 0;
     const charCount = text.length;
@@ -261,6 +261,8 @@ export const uploadResume = async (req, res) => {
         }
         const sections = extractSections(cleanedText);
         console.log(sections);
+        const skillsData = await extractSkills(sections);
+        console.log(skillsData);
 
         return res.status(201).json({
             success: true,
@@ -268,7 +270,7 @@ export const uploadResume = async (req, res) => {
             data: {
                 fileName: originalname,
                 fileSize: size,
-                extractedText: cleanedText,
+                extractedText: sections,
                 meta: quality,
             },
         });
