@@ -73,22 +73,38 @@ export const extractSkills = async (resumeText) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: 'openai/gpt-4.1-mini',
+                model: 'openai/gpt-4o-mini', // ✅ FIXED
                 max_tokens: 600,
                 temperature: 0.2,
                 messages: [
                     {
                         role: 'system',
-                        content: 'Extract technical skills from the text and compute ONE overall rating from 1 to 10 based on experience, projects, and skills. ' +
-                            'Return ONLY valid JSON in this exact format: {"overall_rating": number, "skills": string[]}. ' +
-                            'Do not include explanations, markdown, or extra text.'
-                    },
+                        content: `
+Extract technical skills from the text.
+
+Then compute ONE overall rating from 1 to 10 based on:
+- depth of experience
+- complexity of projects
+- number and relevance of skills
+
+Return ONLY valid JSON in this exact structure:
+{
+  "overall_rating": number,
+  "skills": string[]
+}
+
+Rules:
+- Do NOT rate individual skills
+- Do NOT include explanations, markdown, or extra text
+- overall_rating must be an integer from 1 to 10
+`},
                     {
                         role: 'user',
-                        content: resumeText, // 🔴 soft cap input
+                        content: resumeText,
                     },
                 ],
             }),
+
         }
     );
 

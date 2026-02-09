@@ -211,7 +211,6 @@ function extractSections(text) {
     return result;
 }
 
-
 export const uploadResume = async (req, res) => {
     try {
         if (!req.file) {
@@ -259,10 +258,21 @@ export const uploadResume = async (req, res) => {
                 message: "This resume appears to be designed using Canva or heavy graphics. Please upload a text-based PDF or DOCX for best results.",
             });
         }
+
+
         const sections = extractSections(cleanedText);
-        console.log(sections);
-        const skillsData = await extractSkills(sections);
-        console.log(skillsData);
+        const llmInput = `
+SKILLS:
+${sections.skills || ""}
+
+EXPERIENCE:
+${sections.experience || ""}
+
+PROJECTS:
+${sections.projects || ""}
+`.trim();
+        const LLMresponse = await extractSkills(llmInput);
+        console.log(LLMresponse);
 
         return res.status(201).json({
             success: true,
@@ -270,7 +280,7 @@ export const uploadResume = async (req, res) => {
             data: {
                 fileName: originalname,
                 fileSize: size,
-                extractedText: sections,
+                extractedText: LLMresponse,
                 meta: quality,
             },
         });
