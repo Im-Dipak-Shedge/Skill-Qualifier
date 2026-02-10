@@ -272,7 +272,7 @@ PROJECTS:
 ${sections.projects || ""}
 `.trim();
         const LLMresponse = await extractSkills(llmInput);
-        console.log(LLMresponse);
+
 
         return res.status(201).json({
             success: true,

@@ -1,24 +1,27 @@
 import { useRef, useState } from "react";
 import api from "../apis/axios";
 import Swal from "sweetalert2";
+import SkillConfirmation from "./../components/SkillConfirmation";
 
 export default function UploadResume() {
   const fileRef = useRef(null);
   const [file, setFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const [resumeData, setResumeData] = useState(null);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
 
   const handleUpload = async () => {
-    if (!file) return;
+    if (!file || uploading) return;
 
     const formData = new FormData();
     formData.append("resume", file); // must match multer field name
     try {
+      setUploading(true);
       const res = await api.post("/upload", formData);
-      console.log("Upload success:", res.data);
-      
+      setResumeData(res.data.data.extractedText);
     } catch (err) {
       Swal.fire({
         icon: "error",
@@ -27,12 +30,45 @@ export default function UploadResume() {
           err.response?.data?.message ||
           "Failed to upload resume. Please try again.",
       });
+    } finally {
+      setUploading(false);
     }
+  };
+
+  const resetFileInput = () => {
+    setFile(null);
+    setResumeData(null);
+
+    if (fileRef.current) {
+      fileRef.current.value = "";
+    }
+  };
+
+  const onCancel = () => {
+    resetFileInput();
+  };
+
+  const onConfirm = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Skills Confirmed",
+      text: "Your skills have been successfully extracted and confirmed!",
+    });
+    resetFileInput();
   };
 
   return (
     <main className="min-h-[calc(100vh-64px)] bg-[#F4FBF6] px-6 py-16">
       {/* Header */}
+      {resumeData && (
+        <SkillConfirmation
+          skills={resumeData.skills}
+          rating={resumeData.overall_rating}
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+        />
+      )}
+
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-extrabold text-[#3F7D20]">
           Upload Your Resume
@@ -95,16 +131,16 @@ export default function UploadResume() {
 
           {/* Upload button */}
           <button
+            disabled={!file || uploading}
             onClick={handleUpload}
-            disabled={!file}
             className={`mt-8 w-full  max-w-xs py-3 rounded-xl font-semibold transition-all
               ${
-                file
+                file && !uploading
                   ? "bg-[#3F7D20] cursor-pointer text-white hover:shadow-lg hover:-translate-y-[1px]"
                   : "bg-[#91C499]/40 text-[#4B6B57] cursor-not-allowed"
               }`}
           >
-            Upload Resume
+            {uploading ? "Uploading…" : "Upload Resume"}
           </button>
         </div>
       </div>
