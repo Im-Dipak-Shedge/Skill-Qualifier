@@ -62,8 +62,7 @@ export default function UploadResume() {
       {/* Header */}
       {resumeData && (
         <SkillConfirmation
-          skills={resumeData.skills}
-          rating={resumeData.overall_rating}
+          resumeData={resumeData}
           onCancel={onCancel}
           onConfirm={onConfirm}
         />

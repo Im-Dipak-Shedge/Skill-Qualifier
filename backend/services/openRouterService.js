@@ -79,25 +79,124 @@ export const extractSkills = async (resumeText) => {
                 messages: [
                     {
                         role: 'system',
-                        content: `
-Extract technical skills from the text.
+                        //                         content: `
+                        //                        Extract ONLY programming and technical skills from the resume text.
 
-Then compute ONE overall rating from 1 to 10 based on:
-- depth of experience
-- complexity of projects
-- number and relevance of skills
+                        // Ignore:
+                        // - Soft skills (communication, leadership, teamwork, etc.)
+                        // - Generic attributes (hardworking, motivated, etc.)
+                        // - Non-technical tools (MS Office, basic computer skills, etc.)
+
+                        // Only include:
+                        // - Programming languages
+                        // - Frameworks and libraries
+                        // - Databases
+                        // - DevOps tools
+                        // - Cloud platforms
+                        // - AI/ML technologies
+                        // - Software engineering tools
+                        // - Relevant technical concepts
+
+                        // Then:
+
+                        // 1. Compute ONE overall_rating from 1 to 10 based on:
+                        //    - depth of technical experience
+                        //    - complexity of technical projects
+                        //    - relevance and diversity of technical skills
+
+                        // 2. Predict the candidate's PRIMARY technical role based on experience and skills.
+
+                        // Allowed roles (must choose ONE):
+                        // - "Frontend Developer"
+                        // - "Backend Developer"
+                        // - "Full Stack Developer"
+                        // - "Mobile Developer"
+                        // - "AI/ML Engineer"
+                        // - "DevOps Engineer"
+                        // - "Data Engineer"
+                        // - "Software Engineer"
+
+                        // Return ONLY valid JSON in this exact structure:
+
+                        // {
+                        //   "overall_rating": number,
+                        //   "predicted_role": "string",
+                        //   "skills": string[]
+                        // }
+
+                        // Rules:
+                        // - overall_rating must be an integer from 1 to 10
+                        // - predicted_role must match exactly one of the allowed roles
+                        // - Do NOT include explanations
+                        // - Do NOT include markdown
+                        // - Do NOT add extra fields
+                        // - Output must be valid JSON only
+                        // `
+                        content: `
+Extract ONLY programming and technical skills from the resume text.
+
+Strictly ignore:
+- Soft skills (communication, leadership, teamwork, etc.)
+- Personal traits (hardworking, motivated, etc.)
+- Non-technical or generic tools (MS Office, basic computer knowledge, etc.)
+- Certifications without technical relevance
+
+Include ONLY:
+- Programming languages
+- Frameworks and libraries
+- Databases
+- DevOps tools
+- Cloud platforms
+- AI/ML technologies
+- Software engineering tools
+- Version control systems
+- APIs and backend technologies
+- Relevant technical concepts
+
+Then:
+
+1) Compute ONE overall_rating from 1 to 10 based on:
+   - Depth of technical experience
+   - Complexity of technical projects
+   - Relevance and diversity of technical skills
+
+2) Predict up to THREE most relevant technical roles based strictly on skills and project experience.
+
+Allowed roles (choose only from this list, no variations):
+- "Frontend Developer"
+- "Backend Developer"
+- "Full Stack Developer"
+- "Mobile Developer"
+- "AI/ML Engineer"
+- "DevOps Engineer"
+- "Data Engineer"
+- "Software Engineer"
+
+Rules for role prediction:
+- Return minimum 1 and maximum 3 roles
+- Order roles by relevance (index 0 = most relevant / primary role)
+- Do NOT invent new roles
+- Do NOT modify role names
 
 Return ONLY valid JSON in this exact structure:
+
 {
   "overall_rating": number,
-  "skills": string[]
+  "predicted_roles": ["string"],
+  "skills": ["string"]
 }
 
-Rules:
-- Do NOT rate individual skills
-- Do NOT include explanations, markdown, or extra text
+Strict Rules:
 - overall_rating must be an integer from 1 to 10
-`},
+- predicted_roles must be an array with 1 to 3 values
+- Every role must exactly match one of the allowed roles
+- skills must contain only technical/programming skills
+- Do NOT include explanations
+- Do NOT include markdown
+- Do NOT add extra fields
+- Output must be valid JSON only
+`,
+                    },
                     {
                         role: 'user',
                         content: resumeText,
