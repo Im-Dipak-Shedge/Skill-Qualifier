@@ -2,8 +2,10 @@ import { useRef, useState } from "react";
 import api from "../apis/axios";
 import Swal from "sweetalert2";
 import SkillConfirmation from "./../components/SkillConfirmation";
+import { useNavigate } from "react-router-dom";
 
 export default function UploadResume() {
+  const navigate = useNavigate();
   const fileRef = useRef(null);
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -84,6 +86,11 @@ export default function UploadResume() {
         try {
           const response = await api.post("/assessment/generate", payload);
           console.log(response.data);
+          navigate("/assessment", {
+            state: {
+              assessmentData: response.data,
+            },
+          });
         } catch (err) {
           Swal.fire({
             icon: "error",

@@ -39,11 +39,9 @@ export default function SkillConfirmation({ resumeData, onConfirm, onCancel }) {
     const cleaned = editedSkills.map((s) => s.trim()).filter((s) => s !== "");
     const payload = { skills: cleaned, role: selectedRole };
     try {
-      console.log("Sending:", payload);
       // const response = await api.post("/assessment/generate", payload);
       const response = await api.put("/user/profile-data", payload);
 
-      console.log("Backend Response:", response.data);
       setShow(false);
       setTimeout(() => {
         onConfirm(payload);

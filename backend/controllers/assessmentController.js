@@ -26,9 +26,7 @@ export const generateAssessment = async (req, res) => {
                 correctAnswer: q.correctAnswer, // keep if needed for backend
                 marks: q.marks,
             }));
-
             finalQuestions.push(...formatted);
-            console.log("selected questions for skill", finalQuestions);
         });
 
         // 3. response
