@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+// Define a sub-schema for skills
+const skillSchema = new mongoose.Schema({
+  name: String,
+  rating: Number
+});
+
 const userSchema = new mongoose.Schema(
   {
     name: String,
@@ -15,11 +21,13 @@ const userSchema = new mongoose.Schema(
     isVerified: {
       type: Boolean,
       default: false
-    }
-
+    },
+    skills: [skillSchema],
+    role: { type: String },
 
   },
   { timestamps: true }
 );
-
-export default mongoose.model("User", userSchema);
+const User =
+  mongoose.models.User || mongoose.model("User", userSchema);
+export default User;

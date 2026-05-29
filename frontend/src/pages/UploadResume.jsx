@@ -48,13 +48,51 @@ export default function UploadResume() {
     resetFileInput();
   };
 
-  const onConfirm = () => {
+  const onConfirm = async (payload) => {
     Swal.fire({
       icon: "success",
       title: "Skills Confirmed",
       text: "Your skills have been successfully extracted and confirmed!",
     });
     resetFileInput();
+
+    Swal.fire({
+      title: "Start Assessment?",
+      html: `
+    <div style="text-align:left">
+      <p style="margin-bottom:10px;">
+        Your skills have been confirmed successfully.
+      </p>
+
+      <ul style="padding-left:18px; line-height:1.8">
+        <li>15 Questions</li>
+        <li>20 Minutes</li>
+        <li>MCQ Based Assessment</li>
+        <li>Timer will start immediately</li>
+      </ul>
+    </div>
+  `,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Start Test",
+      cancelButtonText: "Later",
+      reverseButtons: true,
+      confirmButtonColor: "#3F7D20",
+      cancelButtonColor: "#9CA3AF",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await api.post("/assessment/generate", payload);
+          console.log(response.data);
+        } catch (err) {
+          Swal.fire({
+            icon: "error",
+            title: "Failed",
+            text: "Could not start assessment",
+          });
+        }
+      }
+    });
   };
 
   return (

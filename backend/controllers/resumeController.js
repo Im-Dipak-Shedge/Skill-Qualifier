@@ -20,86 +20,6 @@ const evaluateExtractionQuality = (text) => {
 }
 
 
-// Function to extract sections from resume text
-
-
-// function extractSections(text) {
-//     const SECTION_ALIASES = {
-//         skills: [
-//             "skills", "technical skills", "key skills", "core skills",
-//             "technologies", "tools & technologies", "competencies"
-//         ],
-//         experience: [
-//             "experience", "work experience", "professional experience",
-//             "employment history", "work history"
-//         ],
-//         projects: [
-//             "projects", "personal projects", "academic projects",
-//             "key projects", "major projects"
-//         ],
-//         education: [
-//             "education", "academics", "qualifications"
-//         ],
-//         summary: [
-//             "summary", "profile", "about", "about me"
-//         ],
-//         activities: [
-//             "extra activities", "extracurricular", "activities", "volunteering"
-//         ],
-//         links: [
-//             "links", "profiles","Profile Links", "portfolio", "github", "linkedin"
-//         ]
-//     };
-
-//     const normalize = (s) =>
-//         s.toLowerCase().replace(/[:\-]/g, "").replace(/\s+/g, " ").trim();
-
-//     const lines = text.split("\n");
-//     const result = {};
-//     let currentSection = null;
-
-//     for (const line of lines) {
-//         const cleanLine = line.trim();
-//         if (!cleanLine) continue;
-
-//         const normalized = normalize(cleanLine);
-
-//         let matchedSection = null;
-//         for (const section in SECTION_ALIASES) {
-//             if (SECTION_ALIASES[section].includes(normalized)) {
-//                 matchedSection = section;
-//                 break;
-//             }
-//         }
-
-//         // Heading found
-//         if (matchedSection) {
-//             // Start capturing only for target sections
-//             if (["skills", "experience", "projects"].includes(matchedSection)) {
-//                 currentSection = matchedSection;
-//                 result[currentSection] = [];
-//             } else {
-//                 // Stop capturing on any other section
-//                 currentSection = null;
-//             }
-//             continue;
-//         }
-
-//         // Collect content
-//         if (currentSection) {
-//             result[currentSection].push(cleanLine);
-//         }
-//     }
-
-//     // Convert arrays to text
-//     for (const key in result) {
-//         result[key] = result[key].join("\n");
-//     }
-
-//     return result;
-// }
-
-
 function extractSections(text) {
     const TARGET_SECTIONS = ["skills", "experience", "projects"];
     const SECTION_ALIASES = {
@@ -207,7 +127,6 @@ function extractSections(text) {
     for (const k in result) {
         result[k] = result[k].join("\n");
     }
-
     return result;
 }
 
@@ -262,17 +181,11 @@ export const uploadResume = async (req, res) => {
 
         const sections = extractSections(cleanedText);
         const llmInput = `
-SKILLS:
-${sections.skills || ""}
-
-EXPERIENCE:
-${sections.experience || ""}
-
-PROJECTS:
-${sections.projects || ""}
-`.trim();
+                        SKILLS: ${sections.skills || ""}     
+                        EXPERIENCE: ${sections.experience || ""}     
+                        PROJECTS: ${sections.projects || ""}
+                        `.trim();
         const LLMresponse = await extractSkills(llmInput);
-
 
         return res.status(201).json({
             success: true,

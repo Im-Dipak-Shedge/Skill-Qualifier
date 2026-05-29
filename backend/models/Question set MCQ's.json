@@ -1,0 +1,2503 @@
+[
+  {
+    "skill": "JavaScript",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which keyword declares a block scoped variable?",
+        "options": ["var", "let", "define", "static"],
+        "correctAnswer": "let",
+        "marks": 2
+      },
+      {
+        "question": "Which method converts JSON string into object?",
+        "options": [
+          "JSON.parse",
+          "JSON.stringify",
+          "JSON.object",
+          "JSON.convert"
+        ],
+        "correctAnswer": "JSON.parse",
+        "marks": 2
+      },
+      {
+        "question": "Which operator checks strict equality?",
+        "options": ["==", "=", "===", "!="],
+        "correctAnswer": "===",
+        "marks": 1
+      },
+      {
+        "question": "Which method adds element to end of array?",
+        "options": ["push", "pop", "shift", "slice"],
+        "correctAnswer": "push",
+        "marks": 1
+      },
+      {
+        "question": "What is closure in JavaScript?",
+        "options": [
+          "Nested loop",
+          "Function with preserved scope",
+          "Array method",
+          "Object type"
+        ],
+        "correctAnswer": "Function with preserved scope",
+        "marks": 3
+      },
+      {
+        "question": "Which keyword is used for asynchronous waiting?",
+        "options": ["pause", "hold", "await", "delay"],
+        "correctAnswer": "await",
+        "marks": 2
+      },
+      {
+        "question": "Which method creates a new array with filtered items?",
+        "options": ["map", "filter", "reduce", "find"],
+        "correctAnswer": "filter",
+        "marks": 2
+      },
+      {
+        "question": "What will typeof null return?",
+        "options": ["null", "object", "undefined", "number"],
+        "correctAnswer": "object",
+        "marks": 3
+      },
+      {
+        "question": "Which symbol is used for template literals?",
+        "options": ["#", "`", "$", "%"],
+        "correctAnswer": "`",
+        "marks": 1
+      },
+      {
+        "question": "Which function schedules delayed execution?",
+        "options": ["setTimeout", "delay", "wait", "setIntervalNow"],
+        "correctAnswer": "setTimeout",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "ReactJS",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which hook manages state?",
+        "options": ["useRef", "useState", "useEffect", "useMemo"],
+        "correctAnswer": "useState",
+        "marks": 2
+      },
+      {
+        "question": "Which hook handles side effects?",
+        "options": ["useEffect", "useMemo", "useState", "useRef"],
+        "correctAnswer": "useEffect",
+        "marks": 2
+      },
+      {
+        "question": "Which hook prevents unnecessary recalculation?",
+        "options": ["useMemo", "useEffect", "useState", "useReducer"],
+        "correctAnswer": "useMemo",
+        "marks": 2
+      },
+      {
+        "question": "What is JSX?",
+        "options": ["Database", "Template syntax", "Server", "Compiler"],
+        "correctAnswer": "Template syntax",
+        "marks": 1
+      },
+      {
+        "question": "Which prop uniquely identifies list items?",
+        "options": ["id", "key", "index", "unique"],
+        "correctAnswer": "key",
+        "marks": 1
+      },
+      {
+        "question": "What does virtual DOM improve?",
+        "options": ["Security", "Performance", "Database", "Routing"],
+        "correctAnswer": "Performance",
+        "marks": 2
+      },
+      {
+        "question": "Which hook stores mutable values without rerender?",
+        "options": ["useEffect", "useState", "useRef", "useMemo"],
+        "correctAnswer": "useRef",
+        "marks": 2
+      },
+      {
+        "question": "Which company developed React?",
+        "options": ["Google", "Meta", "Netflix", "Microsoft"],
+        "correctAnswer": "Meta",
+        "marks": 1
+      },
+      {
+        "question": "Which hook provides global state sharing?",
+        "options": ["useGlobal", "useContext", "useReducer", "useFetch"],
+        "correctAnswer": "useContext",
+        "marks": 2
+      },
+      {
+        "question": "Which method renders React app?",
+        "options": ["ReactDOM.render", "renderApp", "mount", "startReact"],
+        "correctAnswer": "ReactDOM.render",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Node.js",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which module creates HTTP servers?",
+        "options": ["http", "os", "events", "path"],
+        "correctAnswer": "http",
+        "marks": 2
+      },
+      {
+        "question": "What does npm stand for?",
+        "options": [
+          "Node Package Manager",
+          "New Process Module",
+          "Node Program Method",
+          "Native Package Manager"
+        ],
+        "correctAnswer": "Node Package Manager",
+        "marks": 1
+      },
+      {
+        "question": "Which object handles asynchronous events?",
+        "options": ["EventEmitter", "Promise", "Server", "AsyncManager"],
+        "correctAnswer": "EventEmitter",
+        "marks": 2
+      },
+      {
+        "question": "Which module works with file system?",
+        "options": ["fs", "file", "system", "storage"],
+        "correctAnswer": "fs",
+        "marks": 1
+      },
+      {
+        "question": "Which method reads file asynchronously?",
+        "options": ["fs.readFile", "fs.open", "fs.read", "fs.fetch"],
+        "correctAnswer": "fs.readFile",
+        "marks": 2
+      },
+      {
+        "question": "Node.js is built on which engine?",
+        "options": ["SpiderMonkey", "V8", "JavaVM", "NodeCore"],
+        "correctAnswer": "V8",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword exports module?",
+        "options": ["module.exports", "exportNode", "share", "publish"],
+        "correctAnswer": "module.exports",
+        "marks": 2
+      },
+      {
+        "question": "Which package manager comes with Node.js?",
+        "options": ["yarn", "pnpm", "npm", "composer"],
+        "correctAnswer": "npm",
+        "marks": 1
+      },
+      {
+        "question": "What is middleware?",
+        "options": [
+          "Database",
+          "Function between request-response",
+          "Compiler",
+          "Socket"
+        ],
+        "correctAnswer": "Function between request-response",
+        "marks": 3
+      },
+      {
+        "question": "Which method starts server?",
+        "options": ["run", "listen", "start", "boot"],
+        "correctAnswer": "listen",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "MongoDB",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which operator performs logical AND?",
+        "options": ["$and", "$or", "$eq", "$match"],
+        "correctAnswer": "$and",
+        "marks": 2
+      },
+      {
+        "question": "Which method inserts one document?",
+        "options": ["insertOne", "save", "add", "create"],
+        "correctAnswer": "insertOne",
+        "marks": 2
+      },
+      {
+        "question": "MongoDB stores data in which format?",
+        "options": ["XML", "Tables", "BSON", "CSV"],
+        "correctAnswer": "BSON",
+        "marks": 1
+      },
+      {
+        "question": "Which command is used to retrieve documents?",
+        "options": ["get()", "find()", "search()", "fetch()"],
+        "correctAnswer": "find()",
+        "marks": 1
+      },
+      {
+        "question": "Which method updates a single document?",
+        "options": ["updateOne", "modifyOne", "saveOne", "replace"],
+        "correctAnswer": "updateOne",
+        "marks": 2
+      },
+      {
+        "question": "Which stage is used in aggregation pipeline?",
+        "options": ["$group", "$table", "$combine", "$join"],
+        "correctAnswer": "$group",
+        "marks": 2
+      },
+      {
+        "question": "Which index improves query performance?",
+        "options": [
+          "Search index",
+          "Database index",
+          "Collection index",
+          "Document index"
+        ],
+        "correctAnswer": "Database index",
+        "marks": 2
+      },
+      {
+        "question": "Which operator matches values equal to specified value?",
+        "options": ["$eq", "$match", "$equal", "$same"],
+        "correctAnswer": "$eq",
+        "marks": 1
+      },
+      {
+        "question": "What is replication in MongoDB?",
+        "options": [
+          "Data duplication for availability",
+          "Data deletion",
+          "Data compression",
+          "Data filtering"
+        ],
+        "correctAnswer": "Data duplication for availability",
+        "marks": 3
+      },
+      {
+        "question": "Which method deletes one document?",
+        "options": ["deleteOne", "removeOne", "dropOne", "erase"],
+        "correctAnswer": "deleteOne",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Express",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which method defines GET routes?",
+        "options": ["app.get()", "app.route()", "app.fetch()", "app.listen()"],
+        "correctAnswer": "app.get()",
+        "marks": 2
+      },
+      {
+        "question": "Which object contains incoming request data?",
+        "options": ["req", "res", "app", "router"],
+        "correctAnswer": "req",
+        "marks": 1
+      },
+      {
+        "question": "Which object sends response to client?",
+        "options": ["req", "router", "res", "next"],
+        "correctAnswer": "res",
+        "marks": 1
+      },
+      {
+        "question": "Which middleware parses JSON body?",
+        "options": [
+          "express.json()",
+          "body.parse()",
+          "json.middleware()",
+          "parse.json()"
+        ],
+        "correctAnswer": "express.json()",
+        "marks": 2
+      },
+      {
+        "question": "Which function passes control to next middleware?",
+        "options": ["next()", "continue()", "forward()", "skip()"],
+        "correctAnswer": "next()",
+        "marks": 2
+      },
+      {
+        "question": "Which method creates router instance?",
+        "options": [
+          "express.Router()",
+          "express.Route()",
+          "router.create()",
+          "app.Router()"
+        ],
+        "correctAnswer": "express.Router()",
+        "marks": 2
+      },
+      {
+        "question": "Which method starts Express server?",
+        "options": ["listen()", "run()", "boot()", "serve()"],
+        "correctAnswer": "listen()",
+        "marks": 1
+      },
+      {
+        "question": "Which status code means Not Found?",
+        "options": ["200", "500", "404", "301"],
+        "correctAnswer": "404",
+        "marks": 1
+      },
+      {
+        "question": "What is middleware in Express?",
+        "options": [
+          "Database",
+          "Function handling request-response",
+          "Compiler",
+          "Template engine"
+        ],
+        "correctAnswer": "Function handling request-response",
+        "marks": 3
+      },
+      {
+        "question": "Which package helps enable CORS?",
+        "options": ["cors", "cross", "allow-origin", "headers"],
+        "correctAnswer": "cors",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Python",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which keyword defines a function?",
+        "options": ["func", "define", "def", "function"],
+        "correctAnswer": "def",
+        "marks": 1
+      },
+      {
+        "question": "Which data type is immutable?",
+        "options": ["List", "Dictionary", "Set", "Tuple"],
+        "correctAnswer": "Tuple",
+        "marks": 2
+      },
+      {
+        "question": "Which operator is used for exponentiation?",
+        "options": ["^", "**", "//", "%"],
+        "correctAnswer": "**",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword handles exceptions?",
+        "options": ["catch", "try", "handle", "error"],
+        "correctAnswer": "try",
+        "marks": 2
+      },
+      {
+        "question": "Which function returns length of object?",
+        "options": ["count()", "size()", "length()", "len()"],
+        "correctAnswer": "len()",
+        "marks": 1
+      },
+      {
+        "question": "Which collection stores unique values?",
+        "options": ["List", "Tuple", "Set", "Array"],
+        "correctAnswer": "Set",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword creates class?",
+        "options": ["object", "struct", "class", "define"],
+        "correctAnswer": "class",
+        "marks": 1
+      },
+      {
+        "question": "Which method adds item to list?",
+        "options": ["push()", "append()", "insertLast()", "add()"],
+        "correctAnswer": "append()",
+        "marks": 1
+      },
+      {
+        "question": "Which loop is used for iteration over sequence?",
+        "options": ["foreach", "repeat", "for", "iterate"],
+        "correctAnswer": "for",
+        "marks": 1
+      },
+      {
+        "question": "What is PEP 8?",
+        "options": ["Database", "Style guide", "Framework", "Compiler"],
+        "correctAnswer": "Style guide",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Java",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which keyword is used to inherit a class?",
+        "options": ["extends", "implements", "inherits", "super"],
+        "correctAnswer": "extends",
+        "marks": 2
+      },
+      {
+        "question": "Which method is the entry point of Java program?",
+        "options": ["run()", "start()", "main()", "init()"],
+        "correctAnswer": "main()",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword creates object?",
+        "options": ["create", "make", "new", "object"],
+        "correctAnswer": "new",
+        "marks": 1
+      },
+      {
+        "question": "Which collection does not allow duplicates?",
+        "options": ["List", "ArrayList", "Set", "Vector"],
+        "correctAnswer": "Set",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword prevents inheritance?",
+        "options": ["static", "constant", "final", "private"],
+        "correctAnswer": "final",
+        "marks": 2
+      },
+      {
+        "question": "Java follows which programming paradigm?",
+        "options": [
+          "Procedural only",
+          "Object Oriented",
+          "Functional only",
+          "Assembly"
+        ],
+        "correctAnswer": "Object Oriented",
+        "marks": 1
+      },
+      {
+        "question": "Which package contains Scanner class?",
+        "options": ["java.io", "java.util", "java.lang", "java.net"],
+        "correctAnswer": "java.util",
+        "marks": 2
+      },
+      {
+        "question": "Which exception occurs when dividing by zero?",
+        "options": [
+          "IOException",
+          "ArithmeticException",
+          "NullPointerException",
+          "RuntimeError"
+        ],
+        "correctAnswer": "ArithmeticException",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword refers current object?",
+        "options": ["self", "current", "this", "super"],
+        "correctAnswer": "this",
+        "marks": 1
+      },
+      {
+        "question": "What is JVM?",
+        "options": [
+          "Java Variable Method",
+          "Java Virtual Machine",
+          "Java Vendor Machine",
+          "Java Verified Mode"
+        ],
+        "correctAnswer": "Java Virtual Machine",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Kotlin",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Kotlin is officially supported for which platform?",
+        "options": ["Android", "iOS", "Windows Kernel", "Embedded C"],
+        "correctAnswer": "Android",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword declares immutable variable?",
+        "options": ["var", "const", "val", "let"],
+        "correctAnswer": "val",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword declares mutable variable?",
+        "options": ["val", "mut", "var", "dynamic"],
+        "correctAnswer": "var",
+        "marks": 1
+      },
+      {
+        "question": "Which symbol is used for nullable types?",
+        "options": ["!", "@", "?", "#"],
+        "correctAnswer": "?",
+        "marks": 2
+      },
+      {
+        "question": "Which function prints output?",
+        "options": ["echo()", "println()", "display()", "write()"],
+        "correctAnswer": "println()",
+        "marks": 1
+      },
+      {
+        "question": "Kotlin runs on which virtual machine?",
+        "options": ["CLR", "JVM", "Dalvik only", "Node VM"],
+        "correctAnswer": "JVM",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword is used for inheritance?",
+        "options": ["extends", "open", "inherit", "override"],
+        "correctAnswer": "open",
+        "marks": 3
+      },
+      {
+        "question": "Which feature helps avoid NullPointerException?",
+        "options": ["Pointers", "Null Safety", "Auto GC", "Reflection"],
+        "correctAnswer": "Null Safety",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword overrides parent method?",
+        "options": ["replace", "override", "super", "extends"],
+        "correctAnswer": "override",
+        "marks": 2
+      },
+      {
+        "question": "Who developed Kotlin?",
+        "options": ["Google", "JetBrains", "Oracle", "Meta"],
+        "correctAnswer": "JetBrains",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "C++",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which operator is used for scope resolution?",
+        "options": [".", "::", "->", ":"],
+        "correctAnswer": "::",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword creates class?",
+        "options": ["struct", "object", "class", "define"],
+        "correctAnswer": "class",
+        "marks": 1
+      },
+      {
+        "question": "Which concept allows same function name with different parameters?",
+        "options": [
+          "Inheritance",
+          "Overloading",
+          "Overriding",
+          "Encapsulation"
+        ],
+        "correctAnswer": "Overloading",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword is used for dynamic memory allocation?",
+        "options": ["malloc", "alloc", "new", "create"],
+        "correctAnswer": "new",
+        "marks": 2
+      },
+      {
+        "question": "Which header is used for input and output?",
+        "options": ["stdio.h", "iostream", "input.h", "stream.h"],
+        "correctAnswer": "iostream",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword prevents modification?",
+        "options": ["static", "const", "fixed", "private"],
+        "correctAnswer": "const",
+        "marks": 1
+      },
+      {
+        "question": "Which pillar of OOP hides implementation details?",
+        "options": [
+          "Inheritance",
+          "Polymorphism",
+          "Encapsulation",
+          "Abstraction"
+        ],
+        "correctAnswer": "Abstraction",
+        "marks": 3
+      },
+      {
+        "question": "Which loop executes at least once?",
+        "options": ["for", "while", "do-while", "foreach"],
+        "correctAnswer": "do-while",
+        "marks": 1
+      },
+      {
+        "question": "Which function is entry point in C++?",
+        "options": ["run()", "start()", "main()", "init()"],
+        "correctAnswer": "main()",
+        "marks": 1
+      },
+      {
+        "question": "What is STL in C++?",
+        "options": [
+          "System Template Library",
+          "Standard Template Library",
+          "Static Type Language",
+          "Standard Testing Library"
+        ],
+        "correctAnswer": "Standard Template Library",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Flutter",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which language is used by Flutter?",
+        "options": ["Java", "Kotlin", "Dart", "Swift"],
+        "correctAnswer": "Dart",
+        "marks": 1
+      },
+      {
+        "question": "What is the basic building block of Flutter UI?",
+        "options": ["Component", "Widget", "Fragment", "View"],
+        "correctAnswer": "Widget",
+        "marks": 2
+      },
+      {
+        "question": "Which widget creates scrollable list?",
+        "options": ["Column", "Container", "ListView", "Stack"],
+        "correctAnswer": "ListView",
+        "marks": 1
+      },
+      {
+        "question": "Which command creates new Flutter project?",
+        "options": [
+          "flutter start",
+          "flutter init",
+          "flutter create",
+          "flutter new"
+        ],
+        "correctAnswer": "flutter create",
+        "marks": 2
+      },
+      {
+        "question": "Which widget is immutable?",
+        "options": [
+          "StatefulWidget",
+          "StatelessWidget",
+          "MutableWidget",
+          "DynamicWidget"
+        ],
+        "correctAnswer": "StatelessWidget",
+        "marks": 2
+      },
+      {
+        "question": "Which method rebuilds UI in StatefulWidget?",
+        "options": ["refresh()", "setState()", "update()", "buildUI()"],
+        "correctAnswer": "setState()",
+        "marks": 2
+      },
+      {
+        "question": "Which company developed Flutter?",
+        "options": ["Meta", "Microsoft", "Google", "Apple"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "Which widget aligns children vertically?",
+        "options": ["Row", "Column", "Stack", "Align"],
+        "correctAnswer": "Column",
+        "marks": 1
+      },
+      {
+        "question": "Which file contains dependencies in Flutter?",
+        "options": [
+          "package.json",
+          "pubspec.yaml",
+          "flutter.config",
+          "dependencies.xml"
+        ],
+        "correctAnswer": "pubspec.yaml",
+        "marks": 2
+      },
+      {
+        "question": "What is Hot Reload in Flutter?",
+        "options": [
+          "Restart device",
+          "Instant UI update without full restart",
+          "APK build",
+          "Server refresh"
+        ],
+        "correctAnswer": "Instant UI update without full restart",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "FastAPI",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "FastAPI is built using which Python feature?",
+        "options": ["Pointers", "Async/Await", "Threads only", "Compilers"],
+        "correctAnswer": "Async/Await",
+        "marks": 2
+      },
+      {
+        "question": "Which server is commonly used with FastAPI?",
+        "options": ["Apache", "Uvicorn", "Nginx", "Tomcat"],
+        "correctAnswer": "Uvicorn",
+        "marks": 2
+      },
+      {
+        "question": "Which decorator defines GET endpoint?",
+        "options": ["@app.route", "@app.get", "@app.fetch", "@app.api"],
+        "correctAnswer": "@app.get",
+        "marks": 1
+      },
+      {
+        "question": "Which library validates request data in FastAPI?",
+        "options": ["Pydantic", "Marshmallow", "Validator", "Cerberus"],
+        "correctAnswer": "Pydantic",
+        "marks": 3
+      },
+      {
+        "question": "Which format does FastAPI automatically generate docs in?",
+        "options": ["Swagger/OpenAPI", "XML", "SOAP", "GraphQL"],
+        "correctAnswer": "Swagger/OpenAPI",
+        "marks": 2
+      },
+      {
+        "question": "Which method defines POST endpoint?",
+        "options": ["@app.post", "@app.send", "@app.create", "@app.write"],
+        "correctAnswer": "@app.post",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword creates asynchronous function in Python?",
+        "options": ["async", "await", "defer", "thread"],
+        "correctAnswer": "async",
+        "marks": 2
+      },
+      {
+        "question": "What is dependency injection in FastAPI?",
+        "options": [
+          "Database indexing",
+          "Reusable dependency management",
+          "Error handling",
+          "Routing system"
+        ],
+        "correctAnswer": "Reusable dependency management",
+        "marks": 3
+      },
+      {
+        "question": "Which command starts FastAPI server with reload?",
+        "options": [
+          "uvicorn main:app --reload",
+          "fastapi run",
+          "python server.py",
+          "start fastapi"
+        ],
+        "correctAnswer": "uvicorn main:app --reload",
+        "marks": 2
+      },
+      {
+        "question": "FastAPI mainly helps build what?",
+        "options": ["Games", "Desktop apps", "APIs", "Compilers"],
+        "correctAnswer": "APIs",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "Firebase",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Which Firebase service provides NoSQL database?",
+        "options": ["Firestore", "Hosting", "Functions", "Analytics"],
+        "correctAnswer": "Firestore",
+        "marks": 2
+      },
+      {
+        "question": "Which service handles user authentication?",
+        "options": [
+          "Firebase Auth",
+          "Firebase Secure",
+          "Firebase Login",
+          "Firebase User"
+        ],
+        "correctAnswer": "Firebase Auth",
+        "marks": 2
+      },
+      {
+        "question": "Which company developed Firebase?",
+        "options": ["Meta", "Amazon", "Google", "Microsoft"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "Which Firebase service hosts static websites?",
+        "options": ["Firestore", "Hosting", "Storage", "Functions"],
+        "correctAnswer": "Hosting",
+        "marks": 1
+      },
+      {
+        "question": "Which Firebase feature sends push notifications?",
+        "options": ["FCM", "FNS", "NotifyJS", "CloudPush"],
+        "correctAnswer": "FCM",
+        "marks": 2
+      },
+      {
+        "question": "Which database provides realtime synchronization?",
+        "options": ["Realtime Database", "MySQL", "SQLite", "PostgreSQL"],
+        "correctAnswer": "Realtime Database",
+        "marks": 2
+      },
+      {
+        "question": "Which Firebase feature stores files?",
+        "options": ["Storage", "Firestore", "Functions", "Hosting"],
+        "correctAnswer": "Storage",
+        "marks": 1
+      },
+      {
+        "question": "What are Firebase Functions?",
+        "options": [
+          "Frontend components",
+          "Serverless backend functions",
+          "Database schemas",
+          "Mobile widgets"
+        ],
+        "correctAnswer": "Serverless backend functions",
+        "marks": 3
+      },
+      {
+        "question": "Which Firebase tool tracks app usage?",
+        "options": ["Analytics", "Storage", "Auth", "Firestore"],
+        "correctAnswer": "Analytics",
+        "marks": 1
+      },
+      {
+        "question": "Which Firebase feature helps test apps remotely?",
+        "options": ["Test Lab", "Debug Cloud", "Firebase QA", "Cloud Test"],
+        "correctAnswer": "Test Lab",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "WebSockets",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "What is the main advantage of WebSockets?",
+        "options": [
+          "One-time request",
+          "Bi-directional communication",
+          "Static hosting",
+          "Database storage"
+        ],
+        "correctAnswer": "Bi-directional communication",
+        "marks": 2
+      },
+      {
+        "question": "Which protocol is used for secure WebSockets?",
+        "options": ["ws://", "http://", "wss://", "socket://"],
+        "correctAnswer": "wss://",
+        "marks": 2
+      },
+      {
+        "question": "WebSockets mainly help in building what?",
+        "options": [
+          "Static websites",
+          "Real-time applications",
+          "Compilers",
+          "Operating systems"
+        ],
+        "correctAnswer": "Real-time applications",
+        "marks": 1
+      },
+      {
+        "question": "Which event triggers when connection opens?",
+        "options": ["onconnect", "onopen", "onstart", "onready"],
+        "correctAnswer": "onopen",
+        "marks": 1
+      },
+      {
+        "question": "Which method sends data through WebSocket?",
+        "options": ["push()", "emit()", "send()", "write()"],
+        "correctAnswer": "send()",
+        "marks": 1
+      },
+      {
+        "question": "Which event handles incoming messages?",
+        "options": ["onmessage", "onreceive", "ondata", "oninput"],
+        "correctAnswer": "onmessage",
+        "marks": 2
+      },
+      {
+        "question": "Which HTTP status code is used during WebSocket upgrade?",
+        "options": ["101", "200", "404", "500"],
+        "correctAnswer": "101",
+        "marks": 3
+      },
+      {
+        "question": "What is latency?",
+        "options": [
+          "Storage size",
+          "Delay in communication",
+          "Database schema",
+          "Encryption method"
+        ],
+        "correctAnswer": "Delay in communication",
+        "marks": 2
+      },
+      {
+        "question": "Which applications commonly use WebSockets?",
+        "options": [
+          "Chat apps",
+          "Compilers",
+          "BIOS software",
+          "Spreadsheet editors only"
+        ],
+        "correctAnswer": "Chat apps",
+        "marks": 1
+      },
+      {
+        "question": "Which event triggers when WebSocket closes?",
+        "options": ["onclose", "onend", "onfinish", "onexit"],
+        "correctAnswer": "onclose",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "Socket.IO",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Socket.IO is mainly built on top of what?",
+        "options": ["HTTP only", "WebSockets", "FTP", "SMTP"],
+        "correctAnswer": "WebSockets",
+        "marks": 2
+      },
+      {
+        "question": "Which method sends event to clients?",
+        "options": ["send()", "emit()", "broadcast()", "dispatch()"],
+        "correctAnswer": "emit()",
+        "marks": 2
+      },
+      {
+        "question": "Which event fires when client connects?",
+        "options": ["join", "connection", "connectClient", "open"],
+        "correctAnswer": "connection",
+        "marks": 2
+      },
+      {
+        "question": "Socket.IO mainly helps in building what?",
+        "options": [
+          "Realtime apps",
+          "Databases",
+          "Operating systems",
+          "Compilers"
+        ],
+        "correctAnswer": "Realtime apps",
+        "marks": 1
+      },
+      {
+        "question": "Which feature groups multiple sockets together?",
+        "options": ["rooms", "clusters", "channels", "buckets"],
+        "correctAnswer": "rooms",
+        "marks": 3
+      },
+      {
+        "question": "Which method listens for event?",
+        "options": ["listen()", "receive()", "on()", "watch()"],
+        "correctAnswer": "on()",
+        "marks": 1
+      },
+      {
+        "question": "Which event occurs when socket disconnects?",
+        "options": ["leave", "disconnect", "close", "remove"],
+        "correctAnswer": "disconnect",
+        "marks": 1
+      },
+      {
+        "question": "Socket.IO supports automatic what?",
+        "options": [
+          "Database indexing",
+          "Reconnection",
+          "Code compilation",
+          "Deployment"
+        ],
+        "correctAnswer": "Reconnection",
+        "marks": 2
+      },
+      {
+        "question": "Which transport protocol can Socket.IO fallback to?",
+        "options": ["Long polling", "SMTP", "SSH", "Bluetooth"],
+        "correctAnswer": "Long polling",
+        "marks": 3
+      },
+      {
+        "question": "Which backend platform commonly uses Socket.IO?",
+        "options": ["Node.js", "Spring Boot", "Laravel only", "Django only"],
+        "correctAnswer": "Node.js",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "Scikit-learn",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Scikit-learn is mainly used for what?",
+        "options": [
+          "Game development",
+          "Machine Learning",
+          "UI design",
+          "Database management"
+        ],
+        "correctAnswer": "Machine Learning",
+        "marks": 1
+      },
+      {
+        "question": "Which module splits datasets into train and test sets?",
+        "options": [
+          "train_test_split",
+          "dataset_split",
+          "split_data",
+          "divide_dataset"
+        ],
+        "correctAnswer": "train_test_split",
+        "marks": 2
+      },
+      {
+        "question": "Which algorithm is used for classification?",
+        "options": [
+          "Linear Regression",
+          "Logistic Regression",
+          "PCA",
+          "K-Means only"
+        ],
+        "correctAnswer": "Logistic Regression",
+        "marks": 2
+      },
+      {
+        "question": "Which method trains model?",
+        "options": ["fit()", "train()", "learn()", "compile()"],
+        "correctAnswer": "fit()",
+        "marks": 1
+      },
+      {
+        "question": "Which method predicts outputs?",
+        "options": ["forecast()", "predict()", "output()", "result()"],
+        "correctAnswer": "predict()",
+        "marks": 1
+      },
+      {
+        "question": "What is overfitting?",
+        "options": [
+          "Model performs well only on training data",
+          "Model too fast",
+          "Model undertrained",
+          "Database corruption"
+        ],
+        "correctAnswer": "Model performs well only on training data",
+        "marks": 3
+      },
+      {
+        "question": "Which algorithm is used for clustering?",
+        "options": [
+          "Random Forest",
+          "K-Means",
+          "Decision Tree",
+          "Linear Regression"
+        ],
+        "correctAnswer": "K-Means",
+        "marks": 2
+      },
+      {
+        "question": "Which metric evaluates classification accuracy?",
+        "options": [
+          "accuracy_score",
+          "loss_score",
+          "predict_score",
+          "fit_score"
+        ],
+        "correctAnswer": "accuracy_score",
+        "marks": 2
+      },
+      {
+        "question": "What is feature scaling?",
+        "options": [
+          "Removing features",
+          "Normalizing feature values",
+          "Creating datasets",
+          "Deleting columns"
+        ],
+        "correctAnswer": "Normalizing feature values",
+        "marks": 3
+      },
+      {
+        "question": "Which algorithm is ensemble based?",
+        "options": ["Random Forest", "Linear Regression", "KNN", "Naive Bayes"],
+        "correctAnswer": "Random Forest",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "TensorFlow Lite",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "TensorFlow Lite is mainly used for what?",
+        "options": [
+          "Web hosting",
+          "Mobile ML deployment",
+          "Database management",
+          "Game development"
+        ],
+        "correctAnswer": "Mobile ML deployment",
+        "marks": 2
+      },
+      {
+        "question": "TensorFlow Lite models usually use which file extension?",
+        "options": [".tf", ".lite", ".tflite", ".model"],
+        "correctAnswer": ".tflite",
+        "marks": 1
+      },
+      {
+        "question": "Which company developed TensorFlow?",
+        "options": ["Meta", "Microsoft", "Google", "Amazon"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "TensorFlow Lite is optimized mainly for what?",
+        "options": [
+          "Embedded and mobile devices",
+          "Desktop games",
+          "Web browsers only",
+          "Database servers"
+        ],
+        "correctAnswer": "Embedded and mobile devices",
+        "marks": 2
+      },
+      {
+        "question": "What is quantization in TensorFlow Lite?",
+        "options": [
+          "Increasing model size",
+          "Reducing model size and improving speed",
+          "Deleting dataset",
+          "Encrypting model"
+        ],
+        "correctAnswer": "Reducing model size and improving speed",
+        "marks": 3
+      },
+      {
+        "question": "Which language is commonly used with TensorFlow Lite Android apps?",
+        "options": ["Kotlin", "PHP", "Ruby", "Swift only"],
+        "correctAnswer": "Kotlin",
+        "marks": 2
+      },
+      {
+        "question": "What is inference in ML?",
+        "options": [
+          "Training model",
+          "Making predictions using trained model",
+          "Deleting weights",
+          "Collecting data"
+        ],
+        "correctAnswer": "Making predictions using trained model",
+        "marks": 2
+      },
+      {
+        "question": "Which hardware acceleration can TensorFlow Lite use?",
+        "options": ["GPU", "TPU", "NNAPI", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 3
+      },
+      {
+        "question": "TensorFlow Lite mainly focuses on what?",
+        "options": [
+          "Low latency ML",
+          "Cloud deployment only",
+          "Web scraping",
+          "Database indexing"
+        ],
+        "correctAnswer": "Low latency ML",
+        "marks": 2
+      },
+      {
+        "question": "Which TensorFlow Lite component runs the model?",
+        "options": ["Interpreter", "Executor", "Compiler", "Analyzer"],
+        "correctAnswer": "Interpreter",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "TensorFlow Lite",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "TensorFlow Lite is mainly used for what?",
+        "options": [
+          "Web hosting",
+          "Mobile ML deployment",
+          "Database management",
+          "Game development"
+        ],
+        "correctAnswer": "Mobile ML deployment",
+        "marks": 2
+      },
+      {
+        "question": "TensorFlow Lite models usually use which file extension?",
+        "options": [".tf", ".lite", ".tflite", ".model"],
+        "correctAnswer": ".tflite",
+        "marks": 1
+      },
+      {
+        "question": "Which company developed TensorFlow?",
+        "options": ["Meta", "Microsoft", "Google", "Amazon"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "TensorFlow Lite is optimized mainly for what?",
+        "options": [
+          "Embedded and mobile devices",
+          "Desktop games",
+          "Web browsers only",
+          "Database servers"
+        ],
+        "correctAnswer": "Embedded and mobile devices",
+        "marks": 2
+      },
+      {
+        "question": "What is quantization in TensorFlow Lite?",
+        "options": [
+          "Increasing model size",
+          "Reducing model size and improving speed",
+          "Deleting dataset",
+          "Encrypting model"
+        ],
+        "correctAnswer": "Reducing model size and improving speed",
+        "marks": 3
+      },
+      {
+        "question": "Which language is commonly used with TensorFlow Lite Android apps?",
+        "options": ["Kotlin", "PHP", "Ruby", "Swift only"],
+        "correctAnswer": "Kotlin",
+        "marks": 2
+      },
+      {
+        "question": "What is inference in ML?",
+        "options": [
+          "Training model",
+          "Making predictions using trained model",
+          "Deleting weights",
+          "Collecting data"
+        ],
+        "correctAnswer": "Making predictions using trained model",
+        "marks": 2
+      },
+      {
+        "question": "Which hardware acceleration can TensorFlow Lite use?",
+        "options": ["GPU", "TPU", "NNAPI", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 3
+      },
+      {
+        "question": "TensorFlow Lite mainly focuses on what?",
+        "options": [
+          "Low latency ML",
+          "Cloud deployment only",
+          "Web scraping",
+          "Database indexing"
+        ],
+        "correctAnswer": "Low latency ML",
+        "marks": 2
+      },
+      {
+        "question": "Which TensorFlow Lite component runs the model?",
+        "options": ["Interpreter", "Executor", "Compiler", "Analyzer"],
+        "correctAnswer": "Interpreter",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "TensorFlow Lite",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "TensorFlow Lite is mainly used for what?",
+        "options": [
+          "Web hosting",
+          "Mobile ML deployment",
+          "Database management",
+          "Game development"
+        ],
+        "correctAnswer": "Mobile ML deployment",
+        "marks": 2
+      },
+      {
+        "question": "TensorFlow Lite models usually use which file extension?",
+        "options": [".tf", ".lite", ".tflite", ".model"],
+        "correctAnswer": ".tflite",
+        "marks": 1
+      },
+      {
+        "question": "Which company developed TensorFlow?",
+        "options": ["Meta", "Microsoft", "Google", "Amazon"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "TensorFlow Lite is optimized mainly for what?",
+        "options": [
+          "Embedded and mobile devices",
+          "Desktop games",
+          "Web browsers only",
+          "Database servers"
+        ],
+        "correctAnswer": "Embedded and mobile devices",
+        "marks": 2
+      },
+      {
+        "question": "What is quantization in TensorFlow Lite?",
+        "options": [
+          "Increasing model size",
+          "Reducing model size and improving speed",
+          "Deleting dataset",
+          "Encrypting model"
+        ],
+        "correctAnswer": "Reducing model size and improving speed",
+        "marks": 3
+      },
+      {
+        "question": "Which language is commonly used with TensorFlow Lite Android apps?",
+        "options": ["Kotlin", "PHP", "Ruby", "Swift only"],
+        "correctAnswer": "Kotlin",
+        "marks": 2
+      },
+      {
+        "question": "What is inference in ML?",
+        "options": [
+          "Training model",
+          "Making predictions using trained model",
+          "Deleting weights",
+          "Collecting data"
+        ],
+        "correctAnswer": "Making predictions using trained model",
+        "marks": 2
+      },
+      {
+        "question": "Which hardware acceleration can TensorFlow Lite use?",
+        "options": ["GPU", "TPU", "NNAPI", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 3
+      },
+      {
+        "question": "TensorFlow Lite mainly focuses on what?",
+        "options": [
+          "Low latency ML",
+          "Cloud deployment only",
+          "Web scraping",
+          "Database indexing"
+        ],
+        "correctAnswer": "Low latency ML",
+        "marks": 2
+      },
+      {
+        "question": "Which TensorFlow Lite component runs the model?",
+        "options": ["Interpreter", "Executor", "Compiler", "Analyzer"],
+        "correctAnswer": "Interpreter",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Heroku",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Heroku is mainly used for what?",
+        "options": [
+          "Cloud deployment",
+          "Game development",
+          "Database design",
+          "Machine learning only"
+        ],
+        "correctAnswer": "Cloud deployment",
+        "marks": 1
+      },
+      {
+        "question": "Which file specifies startup commands in Heroku?",
+        "options": ["package.json", "Procfile", "server.config", "runtime.txt"],
+        "correctAnswer": "Procfile",
+        "marks": 2
+      },
+      {
+        "question": "Which command deploys code to Heroku?",
+        "options": [
+          "git push heroku main",
+          "heroku deploy",
+          "push cloud",
+          "deploy app"
+        ],
+        "correctAnswer": "git push heroku main",
+        "marks": 2
+      },
+      {
+        "question": "Which system does Heroku use for app containers?",
+        "options": ["Pods", "Dynos", "Threads", "Instances"],
+        "correctAnswer": "Dynos",
+        "marks": 3
+      },
+      {
+        "question": "Heroku supports which languages?",
+        "options": ["Node.js", "Python", "Java", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 1
+      },
+      {
+        "question": "Which command logs into Heroku CLI?",
+        "options": [
+          "heroku login",
+          "heroku start",
+          "login heroku",
+          "auth heroku"
+        ],
+        "correctAnswer": "heroku login",
+        "marks": 1
+      },
+      {
+        "question": "Which database addon is commonly used with Heroku?",
+        "options": ["MongoDB", "Heroku Postgres", "SQLite", "OracleDB"],
+        "correctAnswer": "Heroku Postgres",
+        "marks": 2
+      },
+      {
+        "question": "What are environment variables called in Heroku?",
+        "options": ["Configs", "Secrets", "Config Vars", "System Vars"],
+        "correctAnswer": "Config Vars",
+        "marks": 2
+      },
+      {
+        "question": "Which command checks app logs?",
+        "options": [
+          "heroku logs",
+          "heroku monitor",
+          "heroku check",
+          "heroku status"
+        ],
+        "correctAnswer": "heroku logs",
+        "marks": 1
+      },
+      {
+        "question": "Heroku mainly follows which deployment model?",
+        "options": ["PaaS", "SaaS", "IaaS", "Bare Metal"],
+        "correctAnswer": "PaaS",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Heroku",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Heroku is mainly used for what?",
+        "options": [
+          "Cloud deployment",
+          "Game development",
+          "Database design",
+          "Machine learning only"
+        ],
+        "correctAnswer": "Cloud deployment",
+        "marks": 1
+      },
+      {
+        "question": "Which file specifies startup commands in Heroku?",
+        "options": ["package.json", "Procfile", "server.config", "runtime.txt"],
+        "correctAnswer": "Procfile",
+        "marks": 2
+      },
+      {
+        "question": "Which command deploys code to Heroku?",
+        "options": [
+          "git push heroku main",
+          "heroku deploy",
+          "push cloud",
+          "deploy app"
+        ],
+        "correctAnswer": "git push heroku main",
+        "marks": 2
+      },
+      {
+        "question": "Which system does Heroku use for app containers?",
+        "options": ["Pods", "Dynos", "Threads", "Instances"],
+        "correctAnswer": "Dynos",
+        "marks": 3
+      },
+      {
+        "question": "Heroku supports which languages?",
+        "options": ["Node.js", "Python", "Java", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 1
+      },
+      {
+        "question": "Which command logs into Heroku CLI?",
+        "options": [
+          "heroku login",
+          "heroku start",
+          "login heroku",
+          "auth heroku"
+        ],
+        "correctAnswer": "heroku login",
+        "marks": 1
+      },
+      {
+        "question": "Which database addon is commonly used with Heroku?",
+        "options": ["MongoDB", "Heroku Postgres", "SQLite", "OracleDB"],
+        "correctAnswer": "Heroku Postgres",
+        "marks": 2
+      },
+      {
+        "question": "What are environment variables called in Heroku?",
+        "options": ["Configs", "Secrets", "Config Vars", "System Vars"],
+        "correctAnswer": "Config Vars",
+        "marks": 2
+      },
+      {
+        "question": "Which command checks app logs?",
+        "options": [
+          "heroku logs",
+          "heroku monitor",
+          "heroku check",
+          "heroku status"
+        ],
+        "correctAnswer": "heroku logs",
+        "marks": 1
+      },
+      {
+        "question": "Heroku mainly follows which deployment model?",
+        "options": ["PaaS", "SaaS", "IaaS", "Bare Metal"],
+        "correctAnswer": "PaaS",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "TypeScript",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "TypeScript is a superset of which language?",
+        "options": ["Python", "Java", "JavaScript", "C++"],
+        "correctAnswer": "JavaScript",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword defines interface in TypeScript?",
+        "options": ["type", "interface", "class", "struct"],
+        "correctAnswer": "interface",
+        "marks": 2
+      },
+      {
+        "question": "Which command compiles TypeScript?",
+        "options": ["ts-run", "tsc", "compile-ts", "node-ts"],
+        "correctAnswer": "tsc",
+        "marks": 1
+      },
+      {
+        "question": "Which type accepts any value?",
+        "options": ["unknown", "any", "mixed", "dynamic"],
+        "correctAnswer": "any",
+        "marks": 2
+      },
+      {
+        "question": "Which symbol is used for union types?",
+        "options": ["&", "|", "%", "+"],
+        "correctAnswer": "|",
+        "marks": 2
+      },
+      {
+        "question": "Which type is safer than any?",
+        "options": ["void", "never", "unknown", "object"],
+        "correctAnswer": "unknown",
+        "marks": 3
+      },
+      {
+        "question": "Which file stores TypeScript configuration?",
+        "options": ["typescript.json", "tsconfig.json", "config.ts", "ts.json"],
+        "correctAnswer": "tsconfig.json",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword creates custom reusable type?",
+        "options": ["define", "custom", "type", "typedef"],
+        "correctAnswer": "type",
+        "marks": 1
+      },
+      {
+        "question": "What is static typing?",
+        "options": [
+          "Types checked during compilation",
+          "Types checked after deployment",
+          "Dynamic variables",
+          "Database validation"
+        ],
+        "correctAnswer": "Types checked during compilation",
+        "marks": 3
+      },
+      {
+        "question": "Who developed TypeScript?",
+        "options": ["Meta", "Google", "Microsoft", "Oracle"],
+        "correctAnswer": "Microsoft",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "Next.js",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Next.js is mainly built on top of what?",
+        "options": ["Vue", "Angular", "React", "Svelte"],
+        "correctAnswer": "React",
+        "marks": 1
+      },
+      {
+        "question": "Which feature enables server-side rendering?",
+        "options": ["SSR", "CSR", "SPA", "DOM"],
+        "correctAnswer": "SSR",
+        "marks": 2
+      },
+      {
+        "question": "Which folder defines routes in App Router?",
+        "options": ["pages", "app", "routes", "views"],
+        "correctAnswer": "app",
+        "marks": 2
+      },
+      {
+        "question": "Which component is used for optimized navigation?",
+        "options": ["Anchor", "Link", "Navigate", "Route"],
+        "correctAnswer": "Link",
+        "marks": 1
+      },
+      {
+        "question": "Which component optimizes images in Next.js?",
+        "options": ["Image", "Img", "NextImage", "Photo"],
+        "correctAnswer": "Image",
+        "marks": 2
+      },
+      {
+        "question": "Which rendering method generates pages at build time?",
+        "options": ["SSR", "CSR", "SSG", "ISR"],
+        "correctAnswer": "SSG",
+        "marks": 3
+      },
+      {
+        "question": "Which command creates Next.js app?",
+        "options": [
+          "npx create-next-app",
+          "next create",
+          "npm next-app",
+          "create-next"
+        ],
+        "correctAnswer": "npx create-next-app",
+        "marks": 1
+      },
+      {
+        "question": "Which API helps fetch server-side data in older Pages Router?",
+        "options": [
+          "getServerSideProps",
+          "useFetch",
+          "serverFetch",
+          "fetchProps"
+        ],
+        "correctAnswer": "getServerSideProps",
+        "marks": 3
+      },
+      {
+        "question": "What does ISR stand for?",
+        "options": [
+          "Incremental Static Regeneration",
+          "Internal Server Rendering",
+          "Integrated Static Routing",
+          "Increment Server Reload"
+        ],
+        "correctAnswer": "Incremental Static Regeneration",
+        "marks": 3
+      },
+      {
+        "question": "Next.js mainly improves what?",
+        "options": [
+          "SEO and performance",
+          "Database speed",
+          "Compiler design",
+          "Machine learning"
+        ],
+        "correctAnswer": "SEO and performance",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Next.js",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Next.js is mainly built on top of what?",
+        "options": ["Vue", "Angular", "React", "Svelte"],
+        "correctAnswer": "React",
+        "marks": 1
+      },
+      {
+        "question": "Which feature enables server-side rendering?",
+        "options": ["SSR", "CSR", "SPA", "DOM"],
+        "correctAnswer": "SSR",
+        "marks": 2
+      },
+      {
+        "question": "Which folder defines routes in App Router?",
+        "options": ["pages", "app", "routes", "views"],
+        "correctAnswer": "app",
+        "marks": 2
+      },
+      {
+        "question": "Which component is used for optimized navigation?",
+        "options": ["Anchor", "Link", "Navigate", "Route"],
+        "correctAnswer": "Link",
+        "marks": 1
+      },
+      {
+        "question": "Which component optimizes images in Next.js?",
+        "options": ["Image", "Img", "NextImage", "Photo"],
+        "correctAnswer": "Image",
+        "marks": 2
+      },
+      {
+        "question": "Which rendering method generates pages at build time?",
+        "options": ["SSR", "CSR", "SSG", "ISR"],
+        "correctAnswer": "SSG",
+        "marks": 3
+      },
+      {
+        "question": "Which command creates Next.js app?",
+        "options": [
+          "npx create-next-app",
+          "next create",
+          "npm next-app",
+          "create-next"
+        ],
+        "correctAnswer": "npx create-next-app",
+        "marks": 1
+      },
+      {
+        "question": "Which API helps fetch server-side data in older Pages Router?",
+        "options": [
+          "getServerSideProps",
+          "useFetch",
+          "serverFetch",
+          "fetchProps"
+        ],
+        "correctAnswer": "getServerSideProps",
+        "marks": 3
+      },
+      {
+        "question": "What does ISR stand for?",
+        "options": [
+          "Incremental Static Regeneration",
+          "Internal Server Rendering",
+          "Integrated Static Routing",
+          "Increment Server Reload"
+        ],
+        "correctAnswer": "Incremental Static Regeneration",
+        "marks": 3
+      },
+      {
+        "question": "Next.js mainly improves what?",
+        "options": [
+          "SEO and performance",
+          "Database speed",
+          "Compiler design",
+          "Machine learning"
+        ],
+        "correctAnswer": "SEO and performance",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "Tailwind CSS",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Tailwind CSS is what type of framework?",
+        "options": [
+          "Component-based",
+          "Utility-first",
+          "Database framework",
+          "Backend framework"
+        ],
+        "correctAnswer": "Utility-first",
+        "marks": 2
+      },
+      {
+        "question": "Which class adds padding?",
+        "options": ["m-4", "p-4", "gap-4", "space-4"],
+        "correctAnswer": "p-4",
+        "marks": 1
+      },
+      {
+        "question": "Which class makes text bold?",
+        "options": ["font-bold", "text-bold", "bold-text", "fw-bold"],
+        "correctAnswer": "font-bold",
+        "marks": 1
+      },
+      {
+        "question": "Which class creates flex container?",
+        "options": ["display-flex", "flex", "flexbox", "d-flex"],
+        "correctAnswer": "flex",
+        "marks": 1
+      },
+      {
+        "question": "Which class centers items vertically in flexbox?",
+        "options": [
+          "justify-center",
+          "align-center",
+          "items-center",
+          "content-center"
+        ],
+        "correctAnswer": "items-center",
+        "marks": 2
+      },
+      {
+        "question": "Which file usually stores Tailwind configuration?",
+        "options": [
+          "tailwind.config.js",
+          "tailwind.json",
+          "tailwind.css",
+          "config.tailwind"
+        ],
+        "correctAnswer": "tailwind.config.js",
+        "marks": 2
+      },
+      {
+        "question": "Which class changes background color?",
+        "options": ["text-red-500", "bg-red-500", "color-red", "back-red"],
+        "correctAnswer": "bg-red-500",
+        "marks": 1
+      },
+      {
+        "question": "Which utility helps responsive design?",
+        "options": [
+          "Responsive API",
+          "Breakpoints",
+          "SQL media",
+          "DOM scaling"
+        ],
+        "correctAnswer": "Breakpoints",
+        "marks": 3
+      },
+      {
+        "question": "Which prefix targets medium screens?",
+        "options": ["sm:", "md:", "lg:", "xl:"],
+        "correctAnswer": "md:",
+        "marks": 2
+      },
+      {
+        "question": "Tailwind CSS mainly reduces what?",
+        "options": [
+          "Utility classes",
+          "Custom CSS writing",
+          "JavaScript",
+          "Database queries"
+        ],
+        "correctAnswer": "Custom CSS writing",
+        "marks": 2
+      }
+    ]
+  },
+  {
+    "skill": "React Native",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "React Native is mainly used for what?",
+        "options": [
+          "Web scraping",
+          "Cross-platform mobile apps",
+          "Database design",
+          "Operating systems"
+        ],
+        "correctAnswer": "Cross-platform mobile apps",
+        "marks": 2
+      },
+      {
+        "question": "React Native is based on which library?",
+        "options": ["Vue", "Angular", "React", "Svelte"],
+        "correctAnswer": "React",
+        "marks": 1
+      },
+      {
+        "question": "Which component is used instead of div in React Native?",
+        "options": ["Container", "View", "Section", "Box"],
+        "correctAnswer": "View",
+        "marks": 2
+      },
+      {
+        "question": "Which command creates React Native app using Expo?",
+        "options": [
+          "npx create-expo-app",
+          "expo start-app",
+          "react-native init-expo",
+          "expo create-native"
+        ],
+        "correctAnswer": "npx create-expo-app",
+        "marks": 2
+      },
+      {
+        "question": "Which component displays text?",
+        "options": ["Label", "Text", "Typography", "Paragraph"],
+        "correctAnswer": "Text",
+        "marks": 1
+      },
+      {
+        "question": "Which API helps style components?",
+        "options": ["StyleSheet", "CSS", "StyledAPI", "DesignAPI"],
+        "correctAnswer": "StyleSheet",
+        "marks": 2
+      },
+      {
+        "question": "Which company developed React Native?",
+        "options": ["Google", "Meta", "Microsoft", "Amazon"],
+        "correctAnswer": "Meta",
+        "marks": 1
+      },
+      {
+        "question": "Which navigation library is commonly used?",
+        "options": [
+          "React Navigation",
+          "Native Router",
+          "Mobile Router",
+          "Route Native"
+        ],
+        "correctAnswer": "React Navigation",
+        "marks": 3
+      },
+      {
+        "question": "What does Expo mainly simplify?",
+        "options": [
+          "Database design",
+          "React Native development setup",
+          "Compiler creation",
+          "Cloud deployment"
+        ],
+        "correctAnswer": "React Native development setup",
+        "marks": 3
+      },
+      {
+        "question": "Which hook manages component state?",
+        "options": ["useRef", "useMemo", "useState", "useEffect"],
+        "correctAnswer": "useState",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "PostgreSQL",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "PostgreSQL is what type of database?",
+        "options": ["NoSQL", "Relational", "Graph", "Key-Value"],
+        "correctAnswer": "Relational",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword retrieves data?",
+        "options": ["FETCH", "SELECT", "GET", "SHOW"],
+        "correctAnswer": "SELECT",
+        "marks": 1
+      },
+      {
+        "question": "Which command creates new table?",
+        "options": ["MAKE TABLE", "NEW TABLE", "CREATE TABLE", "ADD TABLE"],
+        "correctAnswer": "CREATE TABLE",
+        "marks": 2
+      },
+      {
+        "question": "Which feature is PostgreSQL known for?",
+        "options": [
+          "ACID compliance",
+          "Game engine",
+          "Frontend rendering",
+          "Mobile compilation"
+        ],
+        "correctAnswer": "ACID compliance",
+        "marks": 3
+      },
+      {
+        "question": "Which data type stores JSON data?",
+        "options": ["JSONB", "STRING", "OBJECT", "DICT"],
+        "correctAnswer": "JSONB",
+        "marks": 3
+      },
+      {
+        "question": "Which command removes rows?",
+        "options": ["DROP", "DELETE", "REMOVE", "CLEAR"],
+        "correctAnswer": "DELETE",
+        "marks": 1
+      },
+      {
+        "question": "Which clause filters records?",
+        "options": ["ORDER BY", "GROUP BY", "WHERE", "LIMIT"],
+        "correctAnswer": "WHERE",
+        "marks": 1
+      },
+      {
+        "question": "Which JOIN returns all matching rows?",
+        "options": ["INNER JOIN", "LIMIT JOIN", "FILTER JOIN", "STATIC JOIN"],
+        "correctAnswer": "INNER JOIN",
+        "marks": 2
+      },
+      {
+        "question": "What is indexing mainly used for?",
+        "options": [
+          "Security",
+          "Improving query performance",
+          "Deleting records",
+          "Data duplication"
+        ],
+        "correctAnswer": "Improving query performance",
+        "marks": 2
+      },
+      {
+        "question": "PostgreSQL is open source?",
+        "options": ["Yes", "No", "Partially", "Enterprise only"],
+        "correctAnswer": "Yes",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "skill": "AWS",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "AWS stands for what?",
+        "options": [
+          "Amazon Web Services",
+          "Advanced Web System",
+          "Automated Web Services",
+          "Amazon Wireless System"
+        ],
+        "correctAnswer": "Amazon Web Services",
+        "marks": 1
+      },
+      {
+        "question": "Which AWS service provides compute instances?",
+        "options": ["S3", "EC2", "Lambda", "RDS"],
+        "correctAnswer": "EC2",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for storage?",
+        "options": ["S3", "EC2", "IAM", "VPC"],
+        "correctAnswer": "S3",
+        "marks": 1
+      },
+      {
+        "question": "Which service is serverless compute?",
+        "options": ["EC2", "Lambda", "EBS", "CloudFront"],
+        "correctAnswer": "Lambda",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service manages access control?",
+        "options": ["IAM", "S3", "Route53", "CloudWatch"],
+        "correctAnswer": "IAM",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for databases?",
+        "options": ["RDS", "EC2", "S3", "CloudFront"],
+        "correctAnswer": "RDS",
+        "marks": 1
+      },
+      {
+        "question": "Which AWS service is used for CDN?",
+        "options": ["CloudFront", "Route53", "VPC", "SQS"],
+        "correctAnswer": "CloudFront",
+        "marks": 2
+      },
+      {
+        "question": "Which service monitors AWS resources?",
+        "options": ["CloudWatch", "CloudTrail", "IAM", "S3"],
+        "correctAnswer": "CloudWatch",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for DNS?",
+        "options": ["Route53", "VPC", "EC2", "Lambda"],
+        "correctAnswer": "Route53",
+        "marks": 1
+      },
+      {
+        "question": "Which service provides message queues?",
+        "options": ["SQS", "SNS", "RDS", "EBS"],
+        "correctAnswer": "SQS",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "AWS",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "AWS stands for what?",
+        "options": [
+          "Amazon Web Services",
+          "Advanced Web System",
+          "Automated Web Services",
+          "Amazon Wireless System"
+        ],
+        "correctAnswer": "Amazon Web Services",
+        "marks": 1
+      },
+      {
+        "question": "Which AWS service provides compute instances?",
+        "options": ["S3", "EC2", "Lambda", "RDS"],
+        "correctAnswer": "EC2",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for storage?",
+        "options": ["S3", "EC2", "IAM", "VPC"],
+        "correctAnswer": "S3",
+        "marks": 1
+      },
+      {
+        "question": "Which service is serverless compute?",
+        "options": ["EC2", "Lambda", "EBS", "CloudFront"],
+        "correctAnswer": "Lambda",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service manages access control?",
+        "options": ["IAM", "S3", "Route53", "CloudWatch"],
+        "correctAnswer": "IAM",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for databases?",
+        "options": ["RDS", "EC2", "S3", "CloudFront"],
+        "correctAnswer": "RDS",
+        "marks": 1
+      },
+      {
+        "question": "Which AWS service is used for CDN?",
+        "options": ["CloudFront", "Route53", "VPC", "SQS"],
+        "correctAnswer": "CloudFront",
+        "marks": 2
+      },
+      {
+        "question": "Which service monitors AWS resources?",
+        "options": ["CloudWatch", "CloudTrail", "IAM", "S3"],
+        "correctAnswer": "CloudWatch",
+        "marks": 2
+      },
+      {
+        "question": "Which AWS service is used for DNS?",
+        "options": ["Route53", "VPC", "EC2", "Lambda"],
+        "correctAnswer": "Route53",
+        "marks": 1
+      },
+      {
+        "question": "Which service provides message queues?",
+        "options": ["SQS", "SNS", "RDS", "EBS"],
+        "correctAnswer": "SQS",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Redis",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Redis is mainly used for what?",
+        "options": [
+          "Caching",
+          "File storage",
+          "Frontend rendering",
+          "Image editing"
+        ],
+        "correctAnswer": "Caching",
+        "marks": 1
+      },
+      {
+        "question": "Redis stores data in what form?",
+        "options": ["Tables", "Key-value pairs", "Graphs", "Files"],
+        "correctAnswer": "Key-value pairs",
+        "marks": 1
+      },
+      {
+        "question": "Redis is written in which language?",
+        "options": ["Java", "Python", "C", "Go"],
+        "correctAnswer": "C",
+        "marks": 2
+      },
+      {
+        "question": "Redis is which type of database?",
+        "options": ["Relational", "NoSQL", "Graph", "SQL only"],
+        "correctAnswer": "NoSQL",
+        "marks": 1
+      },
+      {
+        "question": "Which feature makes Redis fast?",
+        "options": [
+          "Disk storage",
+          "In-memory storage",
+          "Batch processing",
+          "Compilation"
+        ],
+        "correctAnswer": "In-memory storage",
+        "marks": 2
+      },
+      {
+        "question": "Which command sets a value?",
+        "options": ["SET", "PUT", "ADD", "INSERT"],
+        "correctAnswer": "SET",
+        "marks": 1
+      },
+      {
+        "question": "Which command gets a value?",
+        "options": ["GET", "FETCH", "READ", "SELECT"],
+        "correctAnswer": "GET",
+        "marks": 1
+      },
+      {
+        "question": "Redis is often used with which backend feature?",
+        "options": [
+          "Caching layer",
+          "UI rendering",
+          "Compilers",
+          "File system"
+        ],
+        "correctAnswer": "Caching layer",
+        "marks": 2
+      },
+      {
+        "question": "Which Redis feature supports pub/sub?",
+        "options": ["Messaging", "Authentication", "Indexing", "Storage"],
+        "correctAnswer": "Messaging",
+        "marks": 2
+      },
+      {
+        "question": "Redis is mostly used for improving what?",
+        "options": [
+          "Latency and speed",
+          "UI design",
+          "Image rendering",
+          "CPU manufacturing"
+        ],
+        "correctAnswer": "Latency and speed",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "GraphQL",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "GraphQL is mainly used for what?",
+        "options": [
+          "API query language",
+          "Database storage",
+          "Frontend styling",
+          "Operating system"
+        ],
+        "correctAnswer": "API query language",
+        "marks": 1
+      },
+      {
+        "question": "Who developed GraphQL?",
+        "options": ["Google", "Facebook (Meta)", "Microsoft", "Amazon"],
+        "correctAnswer": "Facebook (Meta)",
+        "marks": 1
+      },
+      {
+        "question": "GraphQL solves what problem?",
+        "options": [
+          "Over-fetching and under-fetching",
+          "Database duplication",
+          "UI rendering delay",
+          "CPU usage"
+        ],
+        "correctAnswer": "Over-fetching and under-fetching",
+        "marks": 3
+      },
+      {
+        "question": "Which keyword defines a query in GraphQL?",
+        "options": ["query", "select", "get", "fetch"],
+        "correctAnswer": "query",
+        "marks": 1
+      },
+      {
+        "question": "Which operation modifies data?",
+        "options": ["mutation", "update", "change", "edit"],
+        "correctAnswer": "mutation",
+        "marks": 2
+      },
+      {
+        "question": "GraphQL uses what instead of multiple endpoints?",
+        "options": ["Single endpoint", "Multiple servers", "FTP", "Sockets"],
+        "correctAnswer": "Single endpoint",
+        "marks": 2
+      },
+      {
+        "question": "Which tool is commonly used with GraphQL?",
+        "options": ["GraphiQL", "Postman only", "Swagger only", "Redis CLI"],
+        "correctAnswer": "GraphiQL",
+        "marks": 2
+      },
+      {
+        "question": "GraphQL response structure is:",
+        "options": ["Fixed", "Client-defined", "Random", "Binary"],
+        "correctAnswer": "Client-defined",
+        "marks": 3
+      },
+      {
+        "question": "GraphQL is an alternative to which architecture?",
+        "options": ["REST", "SOAP only", "FTP", "SMTP"],
+        "correctAnswer": "REST",
+        "marks": 2
+      },
+      {
+        "question": "Which data type defines schema structure?",
+        "options": [
+          "Schema Definition Language (SDL)",
+          "SQL",
+          "JSON only",
+          "XML"
+        ],
+        "correctAnswer": "Schema Definition Language (SDL)",
+        "marks": 3
+      }
+    ]
+  },
+  {
+    "skill": "Kotlin",
+    "type": "mcq",
+    "questions": [
+      {
+        "question": "Kotlin is officially supported for which platform?",
+        "options": [
+          "iOS only",
+          "Android",
+          "Windows only",
+          "Embedded systems only"
+        ],
+        "correctAnswer": "Android",
+        "marks": 1
+      },
+      {
+        "question": "Kotlin runs on which virtual machine?",
+        "options": ["JVM", "CLR", "V8", "LLVM"],
+        "correctAnswer": "JVM",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword declares a variable that cannot be changed?",
+        "options": ["var", "val", "const", "let"],
+        "correctAnswer": "val",
+        "marks": 2
+      },
+      {
+        "question": "Which keyword is used for mutable variables?",
+        "options": ["val", "var", "let", "def"],
+        "correctAnswer": "var",
+        "marks": 2
+      },
+      {
+        "question": "What is Kotlin mainly used for?",
+        "options": [
+          "Backend only",
+          "Android development",
+          "Game engine only",
+          "Database design"
+        ],
+        "correctAnswer": "Android development",
+        "marks": 1
+      },
+      {
+        "question": "Which feature reduces boilerplate code?",
+        "options": ["Data classes", "Loops", "Threads", "Pointers"],
+        "correctAnswer": "Data classes",
+        "marks": 2
+      },
+      {
+        "question": "Kotlin supports which programming paradigm?",
+        "options": [
+          "Object-oriented only",
+          "Functional and OOP",
+          "Procedural only",
+          "Assembly level"
+        ],
+        "correctAnswer": "Functional and OOP",
+        "marks": 2
+      },
+      {
+        "question": "Which operator is used for null safety?",
+        "options": ["!!", "?:", "?.", "All of these"],
+        "correctAnswer": "All of these",
+        "marks": 3
+      },
+      {
+        "question": "Which company supports Kotlin officially?",
+        "options": ["Google", "Microsoft", "Apple", "Amazon"],
+        "correctAnswer": "Google",
+        "marks": 1
+      },
+      {
+        "question": "Which keyword defines a function?",
+        "options": ["func", "def", "fun", "function"],
+        "correctAnswer": "fun",
+        "marks": 1
+      }
+    ]
+  }
+]
