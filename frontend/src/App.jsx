@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import UploadResume from "./pages/UploadResume";
 import AssessmentPage from "./pages/AssessmentPage";
+import ResultsPage from "./pages/ResultsPage";
 import ManualEntry from "./pages/ManualEntry";
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         <Route path="/upload-resume" element={<UploadResume />} />
         <Route path="/manual-entry" element={<ManualEntry />} />
         <Route path="/assessment" element={<AssessmentPage />} />
+        <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>
   );

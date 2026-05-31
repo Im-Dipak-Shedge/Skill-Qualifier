@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import QuestionCard from "../components/QuestionCard";
+import { useNavigate } from "react-router-dom";
 
 export default function AssessmentPage() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const assessmentData = location.state?.assessmentData;
 
@@ -24,9 +26,8 @@ export default function AssessmentPage() {
   const [answers, setAnswers] = useState({});
   const answeredCount = Object.keys(answers).length;
   const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState(null);
+  const unanswered = totalQuestions - Object.keys(answers).length;
 
-  const unansweredCount = totalQuestions - answeredCount;
   const handleAnswerSelect = (answer) => {
     setAnswers((prev) => ({
       ...prev,
@@ -57,13 +58,18 @@ export default function AssessmentPage() {
     const resultData = {
       obtainedMarks,
       totalMarks,
+      answeredCount,
       correctAnswers,
-      wrongAnswers: totalQuestions - correctAnswers,
+      wrongAnswers: totalQuestions - correctAnswers - unanswered,
       percentage,
       totalQuestions,
     };
+    navigate("/results", {
+      state: {
+        result: resultData,
+      },
+    });
 
-    setResult(resultData);
     console.log(resultData);
   };
 
@@ -223,7 +229,7 @@ export default function AssessmentPage() {
                 </p>
 
                 <h3 className="mt-2 text-3xl font-bold text-orange-500">
-                  {unansweredCount}
+                  {unanswered}
                 </h3>
               </div>
             </div>
@@ -273,8 +279,6 @@ export default function AssessmentPage() {
                 </div>
               </div>
             </div>
-
-            {/* Navigator */}
 
             {/* Instructions */}
             <div className="mt-6 rounded-2xl bg-[#F4FBF6] border border-[#91C499]/20 p-4">
@@ -345,7 +349,7 @@ export default function AssessmentPage() {
 
               <div className="px-4 py-2 rounded-xl bg-orange-50 border border-orange-200">
                 <span className="text-sm font-semibold text-orange-600">
-                  {unansweredCount} Remaining
+                  {unanswered} Remaining
                 </span>
               </div>
 
