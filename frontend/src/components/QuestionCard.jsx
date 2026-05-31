@@ -4,6 +4,7 @@ export default function QuestionCard({
   questionData,
   selectedAnswer,
   onSelectAnswer,
+  submitted,
 }) {
   const [hovered, setHovered] = useState(null);
 
@@ -50,6 +51,7 @@ export default function QuestionCard({
 
           return (
             <button
+              disabled={submitted}
               key={index}
               onClick={() => onSelectAnswer(option)}
               onMouseEnter={() => setHovered(index)}

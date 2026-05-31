@@ -9,7 +9,6 @@ export const generateAssessment = async (req, res) => {
         const docs = await Questionsets.find({
             skill: { $in: skills },
         });
-        console.log("fetched skills from db", docs);
         let finalQuestions = [];
 
         // 2. for each skill doc
