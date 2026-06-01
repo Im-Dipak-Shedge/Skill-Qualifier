@@ -84,6 +84,7 @@ export default function UploadResume() {
       if (result.isConfirmed) {
         try {
           const response = await api.post("/assessment/generate", payload);
+          console.log(response.data);
           navigate("/assessment", {
             state: {
               assessmentData: response.data,
