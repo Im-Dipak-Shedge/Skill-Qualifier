@@ -37,7 +37,6 @@ rounded-2xl px-6 py-4 flex gap-4 items-start"
           <strong>Canva</strong> or design-heavy PDFs often fail text
           extraction.
           <br />
-          We strongly recommend <strong>Manual Entry</strong> for Canva resumes.
         </p>
       </div>
 
@@ -70,41 +69,6 @@ rounded-2xl px-6 py-4 flex gap-4 items-start"
             text-white font-semibold hover:shadow-lg transition"
           >
             Upload Resume
-          </button>
-        </div>
-
-        {/* Manual Entry (Recommended) */}
-        <div
-          className="bg-white rounded-3xl p-10 border border-[#91C499]
-          hover:border-[#3F7D20] hover:shadow-xl transition relative cursor-pointer"
-          onClick={() => navigate("/manual-entry")}
-        >
-          <span
-            className="absolute top-4 right-4 text-xs font-semibold
-            bg-[#3F7D20] text-white px-3 py-1 rounded-full"
-          >
-            Recommended
-          </span>
-
-          <h2 className="text-2xl font-semibold text-[#3F7D20]">
-            Enter Skills Manually
-          </h2>
-
-          <p className="mt-3 text-[#4B6B57]">
-            Skip resume upload. Enter your skills and experience directly.
-          </p>
-
-          <ul className="mt-5 text-sm text-[#4B6B57] space-y-2">
-            <li>• Works for all resume types</li>
-            <li>• No parsing errors</li>
-            <li>• Full control over your data</li>
-          </ul>
-
-          <button
-            className="mt-8 w-full px-6 py-3 rounded-xl
-            bg-[#3F7D20] text-white font-semibold hover:shadow-lg transition"
-          >
-            Enter Manually
           </button>
         </div>
       </div>

@@ -67,8 +67,7 @@ export default function UploadResume() {
       </p>
 
       <ul style="padding-left:18px; line-height:1.8">
-        <li>15 Questions</li>
-        <li>20 Minutes</li>
+        <li>40 Seconds per Question</li>
         <li>MCQ Based Assessment</li>
         <li>Timer will start immediately</li>
       </ul>
@@ -85,7 +84,6 @@ export default function UploadResume() {
       if (result.isConfirmed) {
         try {
           const response = await api.post("/assessment/generate", payload);
-          console.log(response.data);
           navigate("/assessment", {
             state: {
               assessmentData: response.data,
