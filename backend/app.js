@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 // ---- MIDDLEWARES ----
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // frontend URL
+    origin: process.env.VITE_API_URL, // frontend URL
     credentials: true, // allow cookies
 }));
 app.use(cookieParser());
