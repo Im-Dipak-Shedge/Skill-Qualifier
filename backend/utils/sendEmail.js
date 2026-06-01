@@ -13,8 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendVerificationEmail = async (email, link) => {
-  console.log('EMAIL_USER:', process.env.EMAIL_USER);
-  console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
+
   await transporter.sendMail({
     from: `"Skill Qualifier" <${process.env.EMAIL_USER}>`,
     to: email,
@@ -105,6 +104,6 @@ export const sendVerificationEmail = async (email, link) => {
   </body>
 </html>`,
   });
-  console.log("email sent");
+
 
 };

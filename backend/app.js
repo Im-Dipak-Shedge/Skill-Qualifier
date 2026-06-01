@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 // ---- MIDDLEWARES ----
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173", // frontend URL
+    origin: process.env.FRONTEND_URL, // frontend URL
     credentials: true, // allow cookies
 }));
 app.use(cookieParser());
@@ -35,8 +35,14 @@ app.use("/upload", resumeRouter);
 app.use("/user", userRouter);
 app.use("/assessment", assessmentRouter);
 
+//Test route
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server running",
+    });
+});
+const PORT = process.env.PORT || 3000;
 
 // ---- SERVER ----
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
-});
+app.listen(PORT);
