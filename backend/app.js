@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 // ---- MIDDLEWARES ----
 app.use(cors({
-    origin: process.env.VITE_API_URL, // frontend URL
+    origin: "https://skill-qualifier-1.onrender.com",
     credentials: true, // allow cookies
 }));
 app.use(cookieParser());
