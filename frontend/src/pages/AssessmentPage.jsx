@@ -74,7 +74,7 @@ export default function AssessmentPage() {
   };
 
   //timer
-  const [timeLeft, setTimeLeft] = useState(100);
+  const [timeLeft, setTimeLeft] = useState(totalQuestions * 40); // 40s per question
   useEffect(() => {
     if (submitted) return;
 
